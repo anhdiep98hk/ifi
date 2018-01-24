@@ -1,0 +1,29 @@
+2018-01-23 09:29:54.871  INFO 7559 --- [main] c.i.ApplicationMain                      : Starting ApplicationMain on nguyendiep with PID 7559 (/home/huynhduc/eclipse-workspace/HelloWorld/bin started by huynhduc in /home/huynhduc/eclipse-workspace/HelloWorld)
+2018-01-23 09:29:54.873  INFO 7559 --- [main] c.i.ApplicationMain                      : No active profile set, falling back to default profiles: default
+2018-01-23 09:29:54.895  INFO 7559 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22fcf7ab: startup date [Tue Jan 23 09:29:54 ICT 2018]; root of context hierarchy
+2018-01-23 09:29:55.399  INFO 7559 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-01-23 09:29:55.407  INFO 7559 --- [main] o.a.c.c.StandardService                  : Starting service Tomcat
+2018-01-23 09:29:55.408  INFO 7559 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet Engine: Apache Tomcat/8.5.11
+2018-01-23 09:29:55.438  INFO 7559 --- [localhost-startStop-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2018-01-23 09:29:55.438  INFO 7559 --- [localhost-startStop-1] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 544 ms
+2018-01-23 09:29:55.495  INFO 7559 --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2018-01-23 09:29:55.497  INFO 7559 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-01-23 09:29:55.497  INFO 7559 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-01-23 09:29:55.497  INFO 7559 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-01-23 09:29:55.497  INFO 7559 --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean         : Mapping filter: 'requestContextFilter' to: [/*]
+2018-01-23 09:29:55.620  INFO 7559 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22fcf7ab: startup date [Tue Jan 23 09:29:54 ICT 2018]; root of context hierarchy
+2018-01-23 09:29:55.648  INFO 7559 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-01-23 09:29:55.649  INFO 7559 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-01-23 09:29:55.664  INFO 7559 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-23 09:29:55.664  INFO 7559 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-23 09:29:55.683  INFO 7559 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-23 09:29:55.759  INFO 7559 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-01-23 09:29:55.780  INFO 7559 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-01-23 09:29:55.781  INFO 7559 --- [main] c.i.ApplicationMain                      : Hello world info log
+2018-01-23 09:29:55.782  WARN 7559 --- [main] c.i.ApplicationMain                      : Hello world warning!
+2018-01-23 09:29:55.782 ERROR 7559 --- [main] c.i.ApplicationMain                      : Hello world Error. OK
+2018-01-23 09:29:55.782 FATAL 7559 --- [main] c.i.ApplicationMain                      : Hello world Fatal error.
+2018-01-23 09:29:55.782  INFO 7559 --- [main] c.i.ApplicationMain                      : Started ApplicationMain in 1.082 seconds (JVM running for 1.5)
+2018-01-23 12:02:36.542  INFO 7559 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-01-23 12:02:36.542  INFO 7559 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22fcf7ab: startup date [Tue Jan 23 09:29:54 ICT 2018]; root of context hierarchy
+2018-01-23 12:02:36.543  INFO 7559 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
