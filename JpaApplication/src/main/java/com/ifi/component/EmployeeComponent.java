@@ -35,6 +35,27 @@ public class EmployeeComponent implements CommandLineRunner {
 		for (Employee e : employeeSercice.findAll()) {
 			log.info(e.toString());
 		}
+		log.info("====================================");
+		log.info("====================Update====================");
+		if (employeeSercice.findEmployee(4) != null) {
+			Employee empFindUpdate = employeeSercice.findEmployee(4);
+			log.info("Update for " + empFindUpdate.toString());
+
+			Employee empUpdate = new Employee(empFindUpdate.getId(), "name", "email", "address", "phone", true);
+			employeeSercice.update(empUpdate);
+			log.info("updated " + empUpdate.toString());
+		}else {
+			log.error("not exists");
+		}
+
+		log.info("====================================");
+		log.info("====================Delete====================");
+		if (employeeSercice.findEmployee(5) != null) {
+			long idDel = employeeSercice.delete(5);
+			log.info("Deleted " + idDel);
+		}else {
+			log.error("not exists");
+		}
 	}
 
 }

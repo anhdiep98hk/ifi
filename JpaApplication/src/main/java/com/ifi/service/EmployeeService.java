@@ -32,5 +32,19 @@ public class EmployeeService {
 		String hql = "FROM Employee";
 		return em.createQuery(hql).getResultList();
 	}
-
+	
+	public void update(Employee emp) {
+		Employee e = this.findEmployee(emp.getId());
+		e.setName(emp.getName());
+		e.setEmail(emp.getEmail());
+		e.setAddress(emp.getAddress());
+		e.setPhone(emp.getPhone());
+		e.setGender(emp.isGender());
+		em.flush();
+	}
+	
+	public long delete(long id) {
+		em.remove(findEmployee(id));
+		return id;
+	}
 }

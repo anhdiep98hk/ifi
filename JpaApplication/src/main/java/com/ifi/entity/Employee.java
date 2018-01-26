@@ -26,6 +26,16 @@ public class Employee {
 		this.phone = phone;
 		this.gender = gender;
 	}
+	public Employee(long id2, String name2, String email2, String address2, String phone2, boolean gender2) {
+		// TODO Auto-generated constructor stub
+		super();
+		this.id = id2;
+		this.name = name2;
+		this.email = email2;
+		this.address = address2;
+		this.phone = phone2;
+		this.gender = gender2;
+	}
 	public long getId() {
 		return id;
 	}
