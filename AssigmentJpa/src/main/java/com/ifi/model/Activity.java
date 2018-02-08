@@ -3,6 +3,7 @@ package com.ifi.model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -18,6 +19,7 @@ public class Activity implements Serializable {
 
 	@Id
 	@Column(name="activity_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int activityId;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -43,7 +45,7 @@ public class Activity implements Serializable {
 
 	//bi-directional many-to-one association to Timesheet
 	@OneToMany(mappedBy="activity", fetch=FetchType.EAGER)
-	private Set<Timesheet> timesheets;
+	private Set<Timesheet> timesheets = new HashSet<>();
 
 	public Activity() {
 	}
@@ -129,4 +131,14 @@ public class Activity implements Serializable {
 		return timesheet;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return "Activity [activityId=" + activityId + ", endDate=" + endDate + ", otherDetails=" + otherDetails
+				+ ", startDate=" + startDate + ", project=" + project.getProjectId() + ", activityCode=" + activityCode.getActivityCode()
+				 + "]";
+	}
+
+	
 }

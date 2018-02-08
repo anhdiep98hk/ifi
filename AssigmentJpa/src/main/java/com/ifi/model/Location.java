@@ -2,6 +2,8 @@ package com.ifi.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -25,7 +27,7 @@ public class Location implements Serializable {
 
 	//bi-directional many-to-one association to Project
 	@OneToMany(mappedBy="location", fetch=FetchType.EAGER, cascade = CascadeType.ALL)
-	private Set<Project> projects;
+	private Set<Project> projects = new HashSet<>();
 
 	public Location() {
 	}

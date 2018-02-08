@@ -3,6 +3,7 @@ package com.ifi.model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -34,11 +35,11 @@ public class Employee implements Serializable {
 
 	//bi-directional many-to-one association to Project
 	@OneToMany(mappedBy="employee", fetch=FetchType.EAGER, cascade = CascadeType.REMOVE)
-	private Set<Project> projects;
+	private Set<Project> projects = new HashSet<>();
 
 	//bi-directional many-to-one association to Timesheet
 	@OneToMany(mappedBy="employee", fetch=FetchType.EAGER)
-	private Set<Timesheet> timesheets;
+	private Set<Timesheet> timesheets = new HashSet<>();
 
 	public Employee() {
 	}

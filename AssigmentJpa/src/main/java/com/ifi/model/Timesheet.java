@@ -17,6 +17,7 @@ public class Timesheet implements Serializable {
 
 	@Id
 	@Column(name="timesheet_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int timesheetId;
 
 	@Temporal(TemporalType.TIMESTAMP)

@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -36,7 +37,7 @@ public class Project implements Serializable {
 
 	//bi-directional many-to-one association to Activity
 	@OneToMany(mappedBy="project", fetch=FetchType.EAGER)
-	private Set<Activity> activities;
+	private Set<Activity> activities = new HashSet<>();
 
 	//bi-directional many-to-one association to Location
 	@ManyToOne
@@ -50,6 +51,27 @@ public class Project implements Serializable {
 
 	public Project() {
 	}
+	
+	
+
+	
+
+
+
+	public Project(Date endDate, String otherDetails, Date startDate, Location location, Employee employee) {
+		super();
+		this.endDate = endDate;
+		this.otherDetails = otherDetails;
+		this.startDate = startDate;
+		this.location = location;
+		this.employee = employee;
+	}
+
+
+
+
+
+
 
 	public int getProjectId() {
 		return this.projectId;

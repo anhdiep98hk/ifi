@@ -2,6 +2,8 @@ package com.ifi.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -17,14 +19,15 @@ public class ActivityCode implements Serializable {
 
 	@Id
 	@Column(name="activity_code")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int activityCode;
 
 	@Column(name="activity_description")
 	private String activityDescription;
 
 	//bi-directional many-to-one association to Activity
-	@OneToMany(mappedBy="activityCode", fetch=FetchType.EAGER,cascade = CascadeType.ALL)
-	private Set<Activity> activities;
+	@OneToMany(mappedBy="activityCode", fetch=FetchType.LAZY, cascade = CascadeType.REMOVE)
+	private Set<Activity> activities = new HashSet<>();
 
 	public ActivityCode() {
 	}
@@ -76,4 +79,16 @@ public class ActivityCode implements Serializable {
 		return activity;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return "ActivityCode [activityCode=" + activityCode + ", activityDescription=" + activityDescription + "]";
+	}
+
+
+
+	
+
+	
 }
