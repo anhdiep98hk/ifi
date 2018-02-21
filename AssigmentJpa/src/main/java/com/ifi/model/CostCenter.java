@@ -19,6 +19,7 @@ public class CostCenter implements Serializable {
 
 	@Id
 	@Column(name="cost_center_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int costCenterId;
 
 	@Column(name="cost_center_decription")

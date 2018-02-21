@@ -1,9 +1,6 @@
 package com.ifi;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,13 +17,13 @@ import com.ifi.model.Employee;
 import com.ifi.model.Location;
 import com.ifi.model.Project;
 import com.ifi.model.Timesheet;
-import com.ifi.repository.ActivitieCodeRepository;
-import com.ifi.repository.ActivitiesRepository;
-import com.ifi.repository.CostCenterRepository;
-import com.ifi.repository.EmployeesRepository;
-import com.ifi.repository.LocationRepository;
-import com.ifi.repository.ProjectRepository;
-import com.ifi.repository.TimesheetRepository;
+import com.ifi.service.ActivityCodeService;
+import com.ifi.service.ActivityService;
+import com.ifi.service.CostCenterService;
+import com.ifi.service.EmployeesService;
+import com.ifi.service.LocationService;
+import com.ifi.service.ProjectService;
+import com.ifi.service.TimesheetsService;
 
 @SpringBootApplication
 public class AssigmentJpaApplication implements CommandLineRunner {
@@ -34,25 +31,25 @@ public class AssigmentJpaApplication implements CommandLineRunner {
 	private static final Logger logger = LoggerFactory.getLogger(AssigmentJpaApplication.class);
 
 	@Autowired
-	private EmployeesRepository employeesRepository;
+	private EmployeesService employeesService;
 
 	@Autowired
-	private LocationRepository locationRepository;
+	private LocationService locationService;
 
 	@Autowired
-	private ProjectRepository projectRepository;
+	private ProjectService projectService;
 
 	@Autowired
-	private ActivitiesRepository activitiesRepository;
+	private ActivityService activityService;
 
 	@Autowired
-	private CostCenterRepository costCenterRepository;
+	private CostCenterService costCenterService;
 
 	@Autowired
-	private TimesheetRepository timesheetRepository;
+	private TimesheetsService timesheetsService;
 
 	@Autowired
-	private ActivitieCodeRepository activitieCodeRepository;
+	private ActivityCodeService activityCodeService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(AssigmentJpaApplication.class, args);
@@ -67,11 +64,12 @@ public class AssigmentJpaApplication implements CommandLineRunner {
 		
 
 		/* Project */
-
-		
 		Employee employee = new Employee(sdf.parse("12/02/2017"), "Other details for employee",
 				sdf.parse("10/01/2017"));
+		employeesService.addEmployee(employee);
+		
 		Location location = new Location("Airport");
+		locationService.addLocation(location);
 
 		Project project = new Project();
 		project.setEmployee(employee);
@@ -81,84 +79,67 @@ public class AssigmentJpaApplication implements CommandLineRunner {
 		project.setStartDate(sdf.parse("12/01/2013"));
 		
 		
-		employeesRepository.save(employee);
-		locationRepository.save(location);
-		System.out.println(projectRepository.count());
+		projectService.addProject(project);
 
-		// employeesRepository.delete(20);
-		if (locationRepository.findOne(29) != null) {
-			locationRepository.delete(29);
-			System.out.println("Deleted");
-		}
-
-		// update
-
-		if (projectRepository.findOne(2) != null) {
-			Project projectUpdate = projectRepository.findOne(2);
-			projectUpdate.setEmployee(employee);
-			projectUpdate.setLocation(location);
-			projectUpdate.setEndDate(sdf.parse("01/12/2012"));
-			projectUpdate.setOtherDetails("Others details for project update");
-			projectUpdate.setStartDate(sdf.parse("12/02/2017"));
+		int idPj = 5;
 		
-			projectRepository.flush();
-		}
-
-		// delete
-		if (projectRepository.findOne(2) != null) {
-			projectRepository.delete(2);
-		}
+		
+		Project project2 = new Project();
+		project2.setProjectId(idPj);
+		project2.setEmployee(employee);
+		project2.setLocation(location);
+		project2.setEndDate(sdf.parse("01/12/2012"));
+		project2.setOtherDetails("Others details for project 2 update");
+		project2.setStartDate(sdf.parse("12/01/2013"));
+		projectService.editProject(project2);
+		
+		
+		projectService.deleteProject(idPj);
+		
+		
+		
+		
 		
 
-		/* Activities */
-//		Project project2 = projectRepository.getOne(87);
-//		System.out.println(project2.toString());
+		// Activities 
 		
 		ActivityCode activityCode = new ActivityCode("Vacation");
-		System.out.println(activityCode.toString());
+		activityCodeService.addActivityCode(activityCode);
 		
 
 		Activity activity = new Activity();
 		activity.setProject(project);
 		activity.setEndDate(sdf.parse("01/12/2012"));
-		activity.setOtherDetails("Other details for activities 1");
+		activity.setOtherDetails("Other details for activities 2");
 		activity.setStartDate(sdf.parse("12/11/2012"));
 		activity.setActivityCode(activityCode);
-		activityCode.getActivities().add(activity);
-
-		activitieCodeRepository.save(activityCode);
-		projectRepository.save(project);
-		activitiesRepository.save(activity);
+		
+		activityService.addActivity(activity);
+		
+		int idActivity = 9;
+		
+		Activity activity2 = new Activity();
+		activity2.setActivityId(idActivity);
+		activity2.setProject(project);
+		activity2.setEndDate(sdf.parse("01/12/2012"));
+		activity2.setOtherDetails("Other details for activities 2 updATTE");
+		activity2.setStartDate(sdf.parse("12/11/2012"));
+		activity2.setActivityCode(activityCode);
+		
+		activityService.editProject(activity2);
+		
+		
+		activityService.deleteProject(idActivity);
 		
 		
 		
 		
 		
-
-		// update
-		
-		if (activitiesRepository.findOne(3) != null) {
-			Activity activityUpdate = activitiesRepository.findOne(3);
-			activityUpdate.setActivityCode(activityCode);
-			activityUpdate.setEndDate(sdf.parse("01/12/2012"));
-			activityUpdate.setOtherDetails("Other details for activities update");
-			activityUpdate.setProject(project);
-			activityUpdate.setStartDate(sdf.parse("12/11/2012"));
-			activitiesRepository.flush();
-		}
-
-		// delete
-		if (activitiesRepository.findOne(2) != null) {
-			activitiesRepository.delete(2);
-		}
-		
-		
-		
-		/*Timesheet*/
+		//Timesheet
 		
 		CostCenter costCenter = new CostCenter("cost center decription 1","Cost center 1","Ohter details for costcenter 1");
+		costCenterService.addCost(costCenter);
 		
-		Activity activity1 = new Activity(sdf.parse("12/02/2017"),"Other details for activity",sdf.parse("10/01/2017"));
 		
 		
 		Timesheet timesheet = new Timesheet();
@@ -168,33 +149,29 @@ public class AssigmentJpaApplication implements CommandLineRunner {
 		timesheet.setOtherDetails("Other details for timesheet");
 		timesheet.setStartDate(sdf.parse("10/11/2017"));
 		timesheet.setSubmittedDate(sdf.parse("21/12/2017"));
-		timesheet.setActivity(activity1);
+		timesheet.setActivity(activity);
 		costCenter.addTimesheet(timesheet);
 		
-		activitiesRepository.save(activity1);
-		costCenterRepository.save(costCenter);
-		employeesRepository.save(employee);		
-		timesheetRepository.save(timesheet);
+		timesheetsService.addTimesheet(timesheet);
 		
-		int id = 3;
+		
+		
+		int idTimesheet = 2;
 
-		if (timesheetRepository.findOne(id) != null) {			
-			Timesheet timesheetUpdate = timesheetRepository.findOne(id);
-			timesheetUpdate.setCostCenter(costCenter);
-			timesheetUpdate.setEmployee(employee);
-			timesheetUpdate.setEndDate(sdf.parse("20/12/2017"));
-			timesheetUpdate.setOtherDetails("Other details for timesheet");
-			timesheetUpdate.setStartDate(sdf.parse("10/11/2017"));
-			timesheetUpdate.setSubmittedDate(sdf.parse("21/12/2017"));
-			timesheetUpdate.setActivity(activity1);
-
-			timesheetRepository.flush();
-		}
-
+		Timesheet timesheet2 = new Timesheet();
+		timesheet2.setTimesheetId(idTimesheet);
+		timesheet2.setCostCenter(costCenter);
+		timesheet2.setEmployee(employee);
+		timesheet2.setEndDate(sdf.parse("20/12/2017"));
+		timesheet2.setOtherDetails("Other details for timesheet update");
+		timesheet2.setStartDate(sdf.parse("10/11/2017"));
+		timesheet2.setSubmittedDate(sdf.parse("21/12/2017"));
+		timesheet2.setActivity(activity);
+		
+		timesheetsService.editProject(timesheet2);
+		
 		// delete
-		if (timesheetRepository.findOne(id) != null) {
-			timesheetRepository.delete(id);
-		}
+		timesheetsService.deleteProject(idTimesheet);
 
 	}
 }
