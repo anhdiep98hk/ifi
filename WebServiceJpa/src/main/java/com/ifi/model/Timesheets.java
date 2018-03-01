@@ -43,6 +43,21 @@ public class Timesheets implements java.io.Serializable {
 		this.startDate = startDate;
 		this.submittedDate = submittedDate;
 	}
+	
+	
+
+	public Timesheets(Integer timesheetId, Activities activities, CostCenters costCenters, Employees employees,
+			Date endDate, String otherDetails, Date startDate, Date submittedDate) {
+		super();
+		this.timesheetId = timesheetId;
+		this.activities = activities;
+		this.costCenters = costCenters;
+		this.employees = employees;
+		this.endDate = endDate;
+		this.otherDetails = otherDetails;
+		this.startDate = startDate;
+		this.submittedDate = submittedDate;
+	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)

@@ -37,14 +37,31 @@ public class Projects implements java.io.Serializable {
 	public Projects() {
 	}
 
-	public Projects(Employees employees, Location location, Date endDate, String otherDetails, Date startDate,
-			Set<Activities> activitieses) {
+	public Projects(Employees employees, Location location, Date endDate, String otherDetails, Date startDate) {
 		this.employees = employees;
 		this.location = location;
 		this.endDate = endDate;
 		this.otherDetails = otherDetails;
 		this.startDate = startDate;
-		this.activitieses = activitieses;
+	}
+	
+	
+
+	public Projects(Integer projectId, Employees employees, Location location, Date endDate, String otherDetails,
+			Date startDate) {
+		super();
+		this.projectId = projectId;
+		this.employees = employees;
+		this.location = location;
+		this.endDate = endDate;
+		this.otherDetails = otherDetails;
+		this.startDate = startDate;
+	}
+
+	@Override
+	public String toString() {
+		return "Projects [projectId=" + projectId + ", employees=" + employees + ", location=" + location + ", endDate="
+				+ endDate + ", otherDetails=" + otherDetails + ", startDate=" + startDate + "]";
 	}
 
 	@Id

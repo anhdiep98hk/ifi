@@ -36,15 +36,28 @@ public class Activities implements java.io.Serializable {
 
 	public Activities() {
 	}
+	
+	
 
-	public Activities(ActivityCodes activityCodes, Projects projects, Date endDate, String otherDetails, Date startDate,
-			Set<Timesheets> timesheetses) {
+	public Activities(Integer activityId, ActivityCodes activityCodes, Projects projects, Date endDate,
+			String otherDetails, Date startDate) {
+		super();
+		this.activityId = activityId;
 		this.activityCodes = activityCodes;
 		this.projects = projects;
 		this.endDate = endDate;
 		this.otherDetails = otherDetails;
 		this.startDate = startDate;
-		this.timesheetses = timesheetses;
+	}
+
+
+
+	public Activities(ActivityCodes activityCodes, Projects projects, Date endDate, String otherDetails, Date startDate) {
+		this.activityCodes = activityCodes;
+		this.projects = projects;
+		this.endDate = endDate;
+		this.otherDetails = otherDetails;
+		this.startDate = startDate;
 	}
 
 	@Id

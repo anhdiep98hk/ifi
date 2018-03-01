@@ -1,5 +1,6 @@
 package com.ifi.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.ifi.model.Activities;
+import com.ifi.model.ActivityCodes;
 import com.ifi.model.Projects;
+import com.ifi.service.ActivityCodeService;
 import com.ifi.service.ActivityService;
 import com.ifi.service.ProjectService;
 
@@ -28,6 +31,10 @@ public class ActivityController {
 	
 	@Autowired
 	ActivityService activityService;
+	@Autowired
+	ActivityCodeService activityCodeService;
+	@Autowired
+	ProjectService projectService;
 	
 	@GetMapping(value = "/activity")
 	public ResponseEntity<List<Activities>> getAllActivity(){
@@ -42,8 +49,17 @@ public class ActivityController {
 		Activities activities = activityService.getActivityById(id);
 		return new ResponseEntity<Activities>(activities, HttpStatus.OK);
 	}
-	@PostMapping(value = "/activity" , produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_JSON_VALUE })
-	public ResponseEntity<?> createActivity(@RequestBody Activities activities, UriComponentsBuilder builder){
+	@PostMapping(value = "/activity")
+	public ResponseEntity<?> createActivity(int activityCodes, int projects, long endDate, long startDate, String otherDetails, UriComponentsBuilder builder){
+		
+		ActivityCodes codes = activityCodeService.getActivityCodeById(activityCodes);
+		Projects projects2 = projectService.getProjectById(projects);
+		
+		Date dEnd = new Date(endDate);
+		Date dStart = new Date(startDate);
+		
+		Activities activities = new Activities(codes, projects2, dEnd, otherDetails, dStart);
+		
 		boolean flag = activityService.addActivity(activities);
 		if(flag == false) {
 			return new ResponseEntity<Void>(HttpStatus.CONFLICT);
@@ -54,7 +70,15 @@ public class ActivityController {
 	}
 	
 	@PutMapping(value = "/activity")
-	public ResponseEntity<?> updateActivity(@RequestBody Activities activities){
+	public ResponseEntity<?> updateActivity(int activityId,int activityCodes, int projects, long endDate, long startDate, String otherDetails){
+		
+		ActivityCodes codes = activityCodeService.getActivityCodeById(activityCodes);
+		Projects projects2 = projectService.getProjectById(projects);
+		Date dEnd = new Date(endDate);
+		Date dStart = new Date(startDate);
+		
+		Activities activities = new Activities(activityId, codes, projects2, dEnd, otherDetails, dStart);
+		
 		try {
 			activityService.editProject(activities);
 		} catch (Exception e) {

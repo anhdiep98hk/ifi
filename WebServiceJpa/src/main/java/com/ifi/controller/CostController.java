@@ -45,12 +45,11 @@ public class CostController {
 	
 	
 	@PostMapping(value = "/cost")
-	public ResponseEntity<?> addCost(@RequestBody CostCenters costCenters, UriComponentsBuilder builder){
+	public ResponseEntity<?> addCost(CostCenters costCenters, UriComponentsBuilder builder){
 		boolean flag = costCenterService.addCost(costCenters);
 		if(flag == false) {
 			return new ResponseEntity<Void>(HttpStatus.CONFLICT);
 		}
-		
 		HttpHeaders headers = new HttpHeaders();
 		headers.setLocation(builder.path("/api/cost/{id}").buildAndExpand(costCenters.getCostCenterId()).toUri());
 		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);

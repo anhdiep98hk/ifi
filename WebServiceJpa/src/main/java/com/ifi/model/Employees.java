@@ -4,6 +4,8 @@ package com.ifi.model;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,6 +18,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -34,6 +37,25 @@ public class Employees implements java.io.Serializable {
 	private Set<Projects> projectses = new HashSet<Projects>(0);
 
 	public Employees() {
+	}
+	
+	
+
+	public Employees(Integer employeeId, Date endDate, String otherDetails, Date startDate) {
+		super();
+		this.employeeId = employeeId;
+		this.endDate = endDate;
+		this.otherDetails = otherDetails;
+		this.startDate = startDate;
+	}
+
+
+
+	public Employees(Date endDate, String otherDetails, Date startDate) {
+		super();
+		this.endDate = endDate;
+		this.otherDetails = otherDetails;
+		this.startDate = startDate;
 	}
 
 	public Employees(Date endDate, String otherDetails, Date startDate, Set<Timesheets> timesheetses,
@@ -59,6 +81,7 @@ public class Employees implements java.io.Serializable {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "end_date", length = 19)
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
 	public Date getEndDate() {
 		return this.endDate;
 	}
@@ -78,6 +101,7 @@ public class Employees implements java.io.Serializable {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "start_date", length = 19)
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
 	public Date getStartDate() {
 		return this.startDate;
 	}
@@ -86,8 +110,8 @@ public class Employees implements java.io.Serializable {
 		this.startDate = startDate;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "employees", targetEntity= Timesheets.class)
-	@JsonIgnore
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "employees", targetEntity= Timesheets.class, cascade = CascadeType.REMOVE)
+	@JsonBackReference
 	public Set<Timesheets> getTimesheetses() {
 		return this.timesheetses;
 	}
@@ -96,7 +120,7 @@ public class Employees implements java.io.Serializable {
 		this.timesheetses = timesheetses;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "employees", targetEntity = Projects.class)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "employees", targetEntity = Projects.class, cascade = CascadeType.REMOVE)
 	@JsonBackReference
 	public Set<Projects> getProjectses() {
 		return this.projectses;

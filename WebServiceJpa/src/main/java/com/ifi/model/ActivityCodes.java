@@ -3,6 +3,8 @@ package com.ifi.model;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -54,7 +56,7 @@ public class ActivityCodes implements java.io.Serializable {
 		this.activityDescription = activityDescription;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "activityCodes")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "activityCodes", cascade = CascadeType.REMOVE)
 	@JsonBackReference
 	public Set<Activities> getActivitieses() {
 		return this.activitieses;

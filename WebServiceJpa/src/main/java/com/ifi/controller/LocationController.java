@@ -2,13 +2,13 @@ package com.ifi.controller;
 
 import java.util.List;
 
-import javax.ws.rs.core.MediaType;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,8 +48,8 @@ public class LocationController {
 	}
 	
 	
-	@PostMapping(value = "/location")
-	public ResponseEntity<?> addLocation(@RequestBody Location location, UriComponentsBuilder builder){
+	@PostMapping(value = "/location", produces = { MediaType.ALL_VALUE, MediaType.ALL_VALUE })
+	public ResponseEntity<?> addLocation(Location location, UriComponentsBuilder builder){
 		boolean flag = locationService.addLocation(location);
 		if(flag == false) {
 			return new ResponseEntity<Void>(HttpStatus.CONFLICT);
