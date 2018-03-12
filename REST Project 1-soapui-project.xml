@@ -1,0 +1,1177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c2a865e7-025a-4b03-b2c6-8cb990192cb1" activeEnvironment="Default" name="REST Project 1" resourceRoot="${projectDir}" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" id="c5fede0d-b27d-4e51-9dbc-61b5139af615" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://10.225.3.230:8080" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+    </con:endpoints>
+    <con:resource name="Book" path="/api/book/2" id="d580948e-25d3-43ae-bc39-d82bd3617213">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>nameBook</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>publisher</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>publishingYear</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>id</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Book 1" id="870625e3-5e45-4628-a9b8-8fa014ffa241" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="11f17b3c-ae41-40b9-ab0d-4ab7492a97f2" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.230/api/book</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="publishingYear" value=""/>
+            <con:entry key="nameBook" value=""/>
+            <con:entry key="publisher" value=""/>
+            <con:entry key="id" value=""/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>nameBook</con:entry>
+            <con:entry>publisher</con:entry>
+            <con:entry>publishingYear</con:entry>
+            <con:entry>id</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+      <con:method name="Method 2" id="872174e7-48cd-44a9-8aab-84747263b695" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>409</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>409</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>409</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>409</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>409</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="67ec8dc1-3f45-40e2-b38c-5fae2df2e3a1" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.230/api/book</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="publishingYear" value="2017"/>
+            <con:entry key="nameBook" value="2"/>
+            <con:entry key="publisher" value="2"/>
+            <con:entry key="id" value=""/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>nameBook</con:entry>
+            <con:entry>publisher</con:entry>
+            <con:entry>publishingYear</con:entry>
+            <con:entry>id</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+      <con:method name="Method 3" id="720b3ec3-125a-4eb7-857d-e1770d1f1f6d" method="PUT">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:book="http://10.225.3.230/api/book">book:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="4d039ea2-f9cd-4586-a6f5-74c22a19a475" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.230/api/book</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="publishingYear" value="2018"/>
+            <con:entry key="nameBook" value="sua"/>
+            <con:entry key="publisher" value="put"/>
+            <con:entry key="id" value="3"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>nameBook</con:entry>
+            <con:entry>publisher</con:entry>
+            <con:entry>publishingYear</con:entry>
+            <con:entry>id</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+      <con:method name="Method 4" id="7d2ff0c2-efcb-4609-9d5c-5998b2f9a258" method="DELETE">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="68cc5345-11fd-4f34-ba70-c38aadb174da" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.230/api/book/2</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="reader" path="/api/reader/1" id="640c6674-bb43-4077-bf01-0ecfde869b4b">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>address</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>birthday</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>firstName</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>lastName</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>sex</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>id</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="531641ba-cf4a-4ec2-95ca-3ef0ac115650" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="60fc81bf-6802-4c3e-87a8-3eac19c58a74" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.230/api/reader</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="birthday" value=""/>
+            <con:entry key="firstName" value=""/>
+            <con:entry key="lastName" value=""/>
+            <con:entry key="address" value=""/>
+            <con:entry key="sex" value=""/>
+            <con:entry key="id" value=""/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>address</con:entry>
+            <con:entry>birthday</con:entry>
+            <con:entry>firstName</con:entry>
+            <con:entry>lastName</con:entry>
+            <con:entry>sex</con:entry>
+            <con:entry>id</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+      <con:method name="Method 2" id="31f64ec4-8423-4f31-987b-d3826532516c" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="f61c39f9-af11-4bc3-89bb-25e120a0dc20" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.230/api/reader</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="birthday" value="2017/12/11"/>
+            <con:entry key="firstName" value="l"/>
+            <con:entry key="lastName" value="t"/>
+            <con:entry key="address" value="l"/>
+            <con:entry key="sex" value="Male"/>
+            <con:entry key="id" value=""/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>address</con:entry>
+            <con:entry>birthday</con:entry>
+            <con:entry>firstName</con:entry>
+            <con:entry>lastName</con:entry>
+            <con:entry>sex</con:entry>
+            <con:entry>id</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+      <con:method name="Method 3" id="a2811ae1-5066-4c0f-85c1-d67dcf2e8b2b" method="PUT">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:read="http://10.225.3.230/api/reader">read:Response</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:request name="Request 1" id="70299958-86f0-4fa9-b3d5-2dac474eb7da" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.230/api/reader</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="birthday" value="2018/11/02"/>
+            <con:entry key="firstName" value="b"/>
+            <con:entry key="lastName" value="c"/>
+            <con:entry key="address" value="a"/>
+            <con:entry key="sex" value="FeMale"/>
+            <con:entry key="id" value="1"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>address</con:entry>
+            <con:entry>birthday</con:entry>
+            <con:entry>firstName</con:entry>
+            <con:entry>lastName</con:entry>
+            <con:entry>sex</con:entry>
+            <con:entry>id</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+      <con:method name="Method 4" id="9b2fcaa7-97f3-4b00-9d7d-68df987c1f2f" method="DELETE">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="38a4a53c-454d-4527-8b34-53827b9efcb5" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.230/api/reader/1</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="borrowing" path="/api/borrowing/4" id="c081d392-f930-423c-aea1-4891f0c514a6">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>borrowedDay</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>reimbursedDay</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>book</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>reader</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+        <con:parameter>
+          <con:name>idBorrowing</con:name>
+          <con:value/>
+          <con:style>QUERY</con:style>
+          <con:default/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="8c3569b6-ee56-41ff-aefe-158ddb384bcf" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:bor="http://10.225.3.230/api/borrowing">bor:Fault</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="9e7b347d-9bcc-40bc-b2a9-11bf0b6ffd99" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.230/api/borrowing</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="idBorrowing" value=""/>
+            <con:entry key="reader" value=""/>
+            <con:entry key="book" value=""/>
+            <con:entry key="reimbursedDay" value=""/>
+            <con:entry key="borrowedDay" value=""/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>borrowedDay</con:entry>
+            <con:entry>reimbursedDay</con:entry>
+            <con:entry>book</con:entry>
+            <con:entry>reader</con:entry>
+            <con:entry>idBorrowing</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+      <con:method name="Method 2" id="2954f507-8282-4bff-9a1a-5cb4eecda1f2" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="36a2bed1-cd80-41a5-9341-4d96c8541734" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.230/api/borrowing</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="idBorrowing" value=""/>
+            <con:entry key="reader" value="2"/>
+            <con:entry key="book" value="1"/>
+            <con:entry key="reimbursedDay" value="2017/10/10"/>
+            <con:entry key="borrowedDay" value="2017/10/02"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>borrowedDay</con:entry>
+            <con:entry>reimbursedDay</con:entry>
+            <con:entry>book</con:entry>
+            <con:entry>reader</con:entry>
+            <con:entry>idBorrowing</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+      <con:method name="Method 3" id="d022e1d7-e381-43b7-9b9e-fb6bd17195b7" method="PUT">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:bor="http://10.225.3.230/api/borrowing">bor:Response</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:request name="Request 1" id="355cc92e-c456-4c1e-9351-238e7d14973c" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.230/api/borrowing</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="idBorrowing" value="4"/>
+            <con:entry key="reader" value="2"/>
+            <con:entry key="book" value="1"/>
+            <con:entry key="reimbursedDay" value="2018/01/02"/>
+            <con:entry key="borrowedDay" value="2018/01/01"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>borrowedDay</con:entry>
+            <con:entry>reimbursedDay</con:entry>
+            <con:entry>book</con:entry>
+            <con:entry>reader</con:entry>
+            <con:entry>idBorrowing</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+      <con:method name="Method 4" id="083f025e-04e9-4d0b-8a43-554f25df219e" method="DELETE">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="9ea4c170-edf8-4c01-9469-aeb88b283a8b" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.230/api/borrowing/4</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="dc791c49-e495-42e0-b106-f62ffd82fe9b" name="TestSuite 1">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="b64d7d31-0c46-4cd9-8c62-7186739e2b4d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Book 1 - Request 1" id="66e928e0-bca9-45bf-9247-10729d4c55fb">
+        <con:settings/>
+        <con:config service="http://10.225.3.230:8080" resourcePath="/api/book/2" methodName="Book 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Book 1 - Request 1" id="11f17b3c-ae41-40b9-ab0d-4ab7492a97f2" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.230/api/book</con:originalUri>
+            <con:assertion type="JsonPath Count" id="e8c7cc9e-4d92-4703-be9d-608678bec2be" name="JsonPath Count">
+              <con:configuration>
+                <path>$[*]['id']</path>
+                <content>9</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="publishingYear" value=""/>
+              <con:entry key="nameBook" value=""/>
+              <con:entry key="publisher" value=""/>
+              <con:entry key="id" value=""/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>nameBook</con:entry>
+              <con:entry>publisher</con:entry>
+              <con:entry>publishingYear</con:entry>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="6072ca4d-a8d2-4f51-bd05-7ffacdf55d08" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 2" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Method 2 - Request 1" id="78551ab5-9c0b-490c-b316-76f3a5e203aa">
+        <con:settings/>
+        <con:config service="http://10.225.3.230:8080" resourcePath="/api/book/2" methodName="Method 2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 2 - Request 1" id="67ec8dc1-3f45-40e2-b38c-5fae2df2e3a1" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.230/api/book</con:originalUri>
+            <con:assertion type="Invalid HTTP Status Codes" id="c7b711ce-a8a3-4f72-82a5-34eb9e502a68" name="Invalid HTTP Status Codes">
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="publishingYear" value="2017"/>
+              <con:entry key="nameBook" value="2"/>
+              <con:entry key="publisher" value="2"/>
+              <con:entry key="id" value=""/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>nameBook</con:entry>
+              <con:entry>publisher</con:entry>
+              <con:entry>publishingYear</con:entry>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="27121a3f-7370-4daf-b1f4-815ebdba9a2f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 3" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Method 3 - Request 1" id="6e806a14-2b06-4e02-bbf7-5eddd8184073">
+        <con:settings/>
+        <con:config service="http://10.225.3.230:8080" resourcePath="/api/book/2" methodName="Method 3" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 3 - Request 1" id="4d039ea2-f9cd-4586-a6f5-74c22a19a475" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.230/api/book</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="9dc5d53c-cdb4-41bc-b855-7420a18014b8" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="publishingYear" value="2018"/>
+              <con:entry key="nameBook" value="sua"/>
+              <con:entry key="publisher" value="put"/>
+              <con:entry key="id" value="3"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>nameBook</con:entry>
+              <con:entry>publisher</con:entry>
+              <con:entry>publishingYear</con:entry>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="c5fc75ce-4b73-47a1-8956-b26881106584" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 4" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Method 4 - Request 1" id="a2e1b2f0-35f2-48e4-b61f-c230bed7e0c5">
+        <con:settings/>
+        <con:config service="http://10.225.3.230:8080" resourcePath="/api/book/2" methodName="Method 4" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 4 - Request 1" id="68cc5345-11fd-4f34-ba70-c38aadb174da" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.230/api/book/2</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="f31a8d5d-dfd1-4e97-adb7-a125d6d4f888" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>204</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:properties/>
+  </con:testSuite>
+  <con:testSuite id="fab56cf8-fb9a-4db4-8481-cb4958281a50" name="TestSuite 2">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="bce3cf2a-e4c1-4d84-9bda-eb8da141455f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Method 1 - Request 1" id="0bc8e1ed-246e-4800-a082-66f516df07cb">
+        <con:settings/>
+        <con:config service="http://10.225.3.230:8080" resourcePath="/api/reader/1" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 1 - Request 1" id="60fc81bf-6802-4c3e-87a8-3eac19c58a74" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.230/api/reader</con:originalUri>
+            <con:assertion type="JsonPath Count" id="098f47e9-83d6-497d-a162-43e0e4a3dd01" name="JsonPath Count">
+              <con:configuration>
+                <path>$[*]['id']</path>
+                <content>1</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="birthday" value=""/>
+              <con:entry key="firstName" value=""/>
+              <con:entry key="lastName" value=""/>
+              <con:entry key="address" value=""/>
+              <con:entry key="sex" value=""/>
+              <con:entry key="id" value=""/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>address</con:entry>
+              <con:entry>birthday</con:entry>
+              <con:entry>firstName</con:entry>
+              <con:entry>lastName</con:entry>
+              <con:entry>sex</con:entry>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="cbbab24d-4645-44dc-b630-8b93cba137b3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 2" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Method 2 - Request 1" id="15c2ae1f-219b-4c22-a0ee-39384ad3d4f5">
+        <con:settings/>
+        <con:config service="http://10.225.3.230:8080" resourcePath="/api/reader/1" methodName="Method 2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 2 - Request 1" id="f61c39f9-af11-4bc3-89bb-25e120a0dc20" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.230/api/reader</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="68c21d0e-34e1-4afd-89a1-28c980119362" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="birthday" value="2017/12/11"/>
+              <con:entry key="firstName" value="l"/>
+              <con:entry key="lastName" value="t"/>
+              <con:entry key="address" value="l"/>
+              <con:entry key="sex" value="Male"/>
+              <con:entry key="id" value=""/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>address</con:entry>
+              <con:entry>birthday</con:entry>
+              <con:entry>firstName</con:entry>
+              <con:entry>lastName</con:entry>
+              <con:entry>sex</con:entry>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="d6efb1f8-f8a0-4221-afdb-5f1e1059b66e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 3" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Method 3 - Request 1" id="b592ddc5-8e2a-4718-8c0e-29e91bfcf217">
+        <con:settings/>
+        <con:config service="http://10.225.3.230:8080" resourcePath="/api/reader/1" methodName="Method 3" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 3 - Request 1" id="70299958-86f0-4fa9-b3d5-2dac474eb7da" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.230/api/reader</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="9da9b795-0de6-4d0d-bd98-c0e47ee8f251" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="birthday" value="2018/11/02"/>
+              <con:entry key="firstName" value="b"/>
+              <con:entry key="lastName" value="c"/>
+              <con:entry key="address" value="a"/>
+              <con:entry key="sex" value="FeMale"/>
+              <con:entry key="id" value="1"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>address</con:entry>
+              <con:entry>birthday</con:entry>
+              <con:entry>firstName</con:entry>
+              <con:entry>lastName</con:entry>
+              <con:entry>sex</con:entry>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="795e2c7a-a46a-4816-8de7-60e404e3f87d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 4" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Method 4 - Request 1" id="fa143512-b492-4abc-8cb7-0a000394c707">
+        <con:settings/>
+        <con:config service="http://10.225.3.230:8080" resourcePath="/api/reader/1" methodName="Method 4" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 4 - Request 1" id="38a4a53c-454d-4527-8b34-53827b9efcb5" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.230/api/reader/1</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="c99119e0-fae1-4f9b-899c-fb07f9d04c91" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>204</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:properties/>
+  </con:testSuite>
+  <con:testSuite id="6f975dc9-1901-4f06-8005-e0d347ef214a" name="TestSuite 3">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="a0de5ce1-74c7-4ee2-9155-5917d50cf036" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Method 1 - Request 1" id="017c9666-6442-4540-bec8-be61d80d4f87">
+        <con:settings/>
+        <con:config service="http://10.225.3.230:8080" resourcePath="/api/borrowing/4" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 1 - Request 1" id="9e7b347d-9bcc-40bc-b2a9-11bf0b6ffd99" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.230/api/borrowing</con:originalUri>
+            <con:assertion type="JsonPath Count" id="f67a3ac0-20f0-4865-8635-70e488b5da39" name="JsonPath Count">
+              <con:configuration>
+                <path>$[*]['idBorrowing']</path>
+                <content>1</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="idBorrowing" value=""/>
+              <con:entry key="reader" value=""/>
+              <con:entry key="book" value=""/>
+              <con:entry key="reimbursedDay" value=""/>
+              <con:entry key="borrowedDay" value=""/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>borrowedDay</con:entry>
+              <con:entry>reimbursedDay</con:entry>
+              <con:entry>book</con:entry>
+              <con:entry>reader</con:entry>
+              <con:entry>idBorrowing</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="999bc3ff-2e26-4401-ad24-45b42a951289" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 2" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Method 2 - Request 1" id="54cbe902-2e89-4f17-87b0-f37ee9fdd764">
+        <con:settings/>
+        <con:config service="http://10.225.3.230:8080" resourcePath="/api/borrowing/4" methodName="Method 2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 2 - Request 1" id="36a2bed1-cd80-41a5-9341-4d96c8541734" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.230/api/borrowing</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="73f18164-844e-4cd4-9413-01bc8e86adcc" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="idBorrowing" value=""/>
+              <con:entry key="reader" value="2"/>
+              <con:entry key="book" value="1"/>
+              <con:entry key="reimbursedDay" value="2017/10/10"/>
+              <con:entry key="borrowedDay" value="2017/10/02"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>borrowedDay</con:entry>
+              <con:entry>reimbursedDay</con:entry>
+              <con:entry>book</con:entry>
+              <con:entry>reader</con:entry>
+              <con:entry>idBorrowing</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="aad91119-092a-427a-9586-0e8f57c8f247" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 3" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Method 3 - Request 1" id="41683b95-3ccc-4341-8dc7-a67082521acf">
+        <con:settings/>
+        <con:config service="http://10.225.3.230:8080" resourcePath="/api/borrowing/4" methodName="Method 3" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 3 - Request 1" id="355cc92e-c456-4c1e-9351-238e7d14973c" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.230/api/borrowing</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="039069e0-fb7b-409a-ba83-83293dbc26ec" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="idBorrowing" value="4"/>
+              <con:entry key="reader" value="2"/>
+              <con:entry key="book" value="1"/>
+              <con:entry key="reimbursedDay" value="2018/01/02"/>
+              <con:entry key="borrowedDay" value="2018/01/01"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>borrowedDay</con:entry>
+              <con:entry>reimbursedDay</con:entry>
+              <con:entry>book</con:entry>
+              <con:entry>reader</con:entry>
+              <con:entry>idBorrowing</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="c3c3420f-09ef-4216-a415-ba4879eb47f6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 4" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Method 4 - Request 1" id="58a1f0f1-a5a5-4303-a8c9-943732f17791">
+        <con:settings/>
+        <con:config service="http://10.225.3.230:8080" resourcePath="/api/borrowing/4" methodName="Method 4" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 4 - Request 1" id="9ea4c170-edf8-4c01-9469-aeb88b283a8b" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.230:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.230/api/borrowing/4</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="aff493f9-be98-40ee-89ff-303a98555330" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>204</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:properties/>
+  </con:testSuite>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:sensitiveInformation/>
+</con:soapui-project>
