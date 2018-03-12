@@ -1,0 +1,1581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="0567cd01-9919-4919-af7a-fbc9111c4472" activeEnvironment="Default" name="SOAPuiAssignmentFirst" resourceRoot="${projectDir}" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormBase Path"/>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormTarget Folder">/home/minato/Desktop</con:setting>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormFormat">xml</con:setting>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormAPI Version">1.0</con:setting>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormSwagger Version">1.2</con:setting>
+  </con:settings>
+  <con:interface xsi:type="con:RestService" id="491a9403-4e1f-4b76-86b3-c1eff5ca6362" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://10.225.3.27" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.rest.actions.service.Wadl2JavaAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Automatic Package Names" value="false"/>
+  <con:entry key="Output Directory" value=""/>
+  <con:entry key="JAXB Customization File(s)" value=""/>
+  <con:entry key="Java Args" value=""/>
+  <con:entry key="Package" value=""/>
+  <con:entry key="Tool Args" value=""/>
+</xml-fragment>]]></con:setting>
+    </con:settings>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>http://10.225.3.27</con:endpoint>
+    </con:endpoints>
+    <con:resource name="personal" path="/api/personal" id="f14b1b02-faa3-4ca1-8213-d3e26defe602">
+      <con:settings/>
+      <con:parameters/>
+      <con:resource name="{id}" path="{id}" id="bc914e7e-45ab-403d-80cf-f1a0ea0c1809">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value>id</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>id</con:default>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Get personal by Id" id="4e049d60-c72e-4b93-a5b8-c454e31dcb7c" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>text/html</con:mediaType>
+            <con:status>503</con:status>
+            <con:params/>
+            <con:element>html</con:element>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+            <con:status>500</con:status>
+            <con:params/>
+            <con:element xmlns:ns="http://10.225.3.27/api/personal/1">ns:Fault</con:element>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:ns="http://10.225.3.27/api/personal/1">ns:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="d30283dc-b8d3-42a8-bc50-53ac5dbe4f27" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/personal/1</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="19" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{id}" path="{id}" id="96e262e7-f80e-47f8-8d87-cdeafe4d46b9">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value>id</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>id</con:default>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Delete Personal by Id" id="40ccc09b-7d1e-4e92-8313-c83b24c84986" method="DELETE">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>text/html</con:mediaType>
+            <con:status>503</con:status>
+            <con:params/>
+            <con:element>html</con:element>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+            <con:status>500</con:status>
+            <con:params/>
+            <con:element xmlns:ns="http://10.225.3.27/api/personal/2">ns:Fault</con:element>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType xsi:nil="true"/>
+            <con:status>204</con:status>
+            <con:params/>
+            <con:element>data</con:element>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType xsi:nil="true"/>
+            <con:status>204</con:status>
+            <con:params/>
+            <con:element>data</con:element>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType xsi:nil="true"/>
+            <con:status>204</con:status>
+            <con:params/>
+            <con:element>data</con:element>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType xsi:nil="true"/>
+            <con:status>204</con:status>
+            <con:params/>
+            <con:element>data</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="89cf8c1b-8290-4bcd-9c14-507bc44449c2" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/personal/2</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="19" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="Get all personal" id="aea127e7-b292-40db-b5db-100620247b06" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html</con:mediaType>
+          <con:status>503</con:status>
+          <con:params/>
+          <con:element>html</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>500</con:status>
+          <con:params/>
+          <con:element xmlns:ns="http://10.225.3.27/">ns:Fault</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="756e1902-e484-4ad5-a803-8e1bb9b3ba57" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.27/</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+          <con:parameterOrder/>
+        </con:request>
+      </con:method>
+      <con:method name="Add personal" id="dd0b538a-f044-4284-ad00-baa5d3f74950" method="POST">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>address</con:name>
+            <con:value>Quang Ninh</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>Quang Ninh</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>dob</con:name>
+            <con:value>2020/11/12</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>2020/11/12</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>fullname</con:name>
+            <con:value>Hokage</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>Hokage</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>gender</con:name>
+            <con:value>Male</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>Male</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>phone</con:name>
+            <con:value>01234567899</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>01234567899</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html</con:mediaType>
+          <con:status>503</con:status>
+          <con:params/>
+          <con:element>html</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="4e941cd5-9c16-4c6e-86cf-e5ffc0c62c4f" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.27/api/personal</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+      <con:method name="Edit personal" id="63c02115-b5cb-4063-81b6-b5f3ccb1d225" method="PUT">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value>10</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>10</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>address</con:name>
+            <con:value>Ha Nam</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>Ha Nam</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>dob</con:name>
+            <con:value>2011/02/22</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>2011/02/22</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>fullname</con:name>
+            <con:value>Kazekage</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>Kazekage</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>gender</con:name>
+            <con:value>Female</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>Female</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>phone</con:name>
+            <con:value>8512312312</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>8512312312</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:per="http://10.225.3.27/api/personal">per:Response</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:request name="Request 1" id="4ea4396e-b8ec-41a5-a893-de865af565d6" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.27/api/personal</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <entry key="id" value="20" xmlns="http://eviware.com/soapui/config"/>
+          </con:parameters>
+        </con:request>
+      </con:method>
+      <con:method name="Delele All Personal" id="5af28384-0db1-47d9-afaa-bc2a556f9790" method="DELETE">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="8bdb3391-35b6-41d0-9f25-2eecf445187a" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.27/api/personal/10</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+          <con:parameterOrder/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="timesheet" path="/api/timesheet" id="804cdfd9-d161-40a0-a823-19d78824efc6">
+      <con:settings/>
+      <con:parameters/>
+      <con:resource name="{id}" path="{idTimesheet}" id="436ec082-0bdf-470d-94e7-47edd824eabb">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>idTimesheet</con:name>
+            <con:value>id</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>id</con:default>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Get Timesheet by Id" id="668b9a99-bba7-4d2e-88db-69abf9397ac1" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="FAULT">
+            <con:mediaType>text/html</con:mediaType>
+            <con:status>503</con:status>
+            <con:params/>
+            <con:element>html</con:element>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+            <con:status>500</con:status>
+            <con:params/>
+            <con:element xmlns:ns="http://10.225.3.27/api/timesheet/1">ns:Fault</con:element>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:ns="http://10.225.3.27/api/timesheet/1">ns:Response</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="f8935c2b-cc86-444c-bde8-beaab0ce9193" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/timesheet/1</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="idTimesheet" value="1" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>idTimesheet</con:entry>
+            </con:parameterOrder>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{id}" path="{idTimesheet}" id="dd66f858-cded-44fc-8573-a2fe9134e9ec">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>idTimesheet</con:name>
+            <con:value>id</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>id</con:default>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Delete Timesheet by Id" id="7685de60-5567-44be-b1d8-363586a1e908" method="DELETE">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType xsi:nil="true"/>
+            <con:status>204</con:status>
+            <con:params/>
+            <con:element>data</con:element>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+            <con:status>500</con:status>
+            <con:params/>
+            <con:element xmlns:ns="http://10.225.3.27/api/timesheet/1">ns:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="a95228a3-9168-4885-a5b1-1b8f918e48aa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/timesheet/1</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="idTimesheet" value="1" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>idTimesheet</con:entry>
+            </con:parameterOrder>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="Get all timesheet" id="45bc76a8-4ab9-4c44-9f84-3fa0f0fa6d26" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html</con:mediaType>
+          <con:status>503</con:status>
+          <con:params/>
+          <con:element>html</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>204</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="5484e116-09e4-4a47-b411-2452d0540a65" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.27/api/timesheet</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+      <con:method name="Add Timesheet" id="0acdc843-67de-4d2a-bab2-54b787e8ce39" method="POST">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>location</con:name>
+            <con:value>Location of Timesheet</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>Location of Timesheet</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>workday</con:name>
+            <con:value>This is work day</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>This is work day</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>personal</con:name>
+            <con:value>6</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>6</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>project</con:name>
+            <con:value>1</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>1</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>500</con:status>
+          <con:params/>
+          <con:element xmlns:tim="http://10.225.3.27/api/timesheet">tim:Fault</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="54270ea3-2230-44a1-a203-70b756be6096" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.27/api/timesheet</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+      <con:method name="Edit Timesheet" id="7146d9b0-3cdf-4fad-b1de-085e3e316a87" method="PUT">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>idTimesheet</con:name>
+            <con:value>1</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>1</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>location</con:name>
+            <con:value>This is PUT</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>This is PUT</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>workday</con:name>
+            <con:value>Work day of PUT</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>Work day of PUT</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>personal</con:name>
+            <con:value>6</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>6</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>project</con:name>
+            <con:value>1</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>1</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:tim="http://10.225.3.27/api/timesheet">tim:Response</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>500</con:status>
+          <con:params/>
+          <con:element xmlns:tim="http://10.225.3.27/api/timesheet">tim:Fault</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="4ffc382e-a223-4d9e-ba6a-6edf247beb09" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.27/api/timesheet</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+      <con:method name="Delele All timesheet" id="d19b7fb7-d797-4ac0-9631-4afe7a9c8529" method="DELETE">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="dd4dd79c-d8bb-4148-b7c3-70e83a03ab8b" mediaType="application/json" postQueryString="false">
+          <con:settings/>
+          <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="project" path="/api/project" id="3f4396a2-29cb-4f63-bc60-ee52ddf0cd72">
+      <con:settings/>
+      <con:parameters/>
+      <con:resource name="{id}" path="{id}" id="23a446d6-356d-405d-aa95-18a159f6df22">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value>id</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>id</con:default>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Get project by Id" id="22ae396a-11f9-4f56-a6dc-d2095b9f1996" method="GET">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params/>
+            <con:element xmlns:ns="http://10.225.3.27/api/project/1">ns:Response</con:element>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+            <con:status>500</con:status>
+            <con:params/>
+            <con:element xmlns:ns="http://10.225.3.27/api/project/1">ns:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="96f92e3a-a156-4046-a6a4-fb84c8c105aa" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/project/1</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="2" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:resource name="{id}" path="{id}" id="c6c0a16f-9943-4939-9160-567f1a384893">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value>id</con:value>
+            <con:style>TEMPLATE</con:style>
+            <con:default>id</con:default>
+          </con:parameter>
+        </con:parameters>
+        <con:method name="Delete project by Id" id="09ae3850-63e6-4cc2-9e84-2aea153c7939" method="DELETE">
+          <con:settings/>
+          <con:parameters/>
+          <con:representation type="RESPONSE">
+            <con:mediaType xsi:nil="true"/>
+            <con:status>204</con:status>
+            <con:params/>
+            <con:element>data</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params/>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType xsi:nil="true"/>
+            <con:status>204</con:status>
+            <con:params/>
+            <con:element>data</con:element>
+          </con:representation>
+          <con:request name="Request 1" id="ef76dfb1-02ab-4153-8979-d7533ad32aaf" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/project/2</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="2" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="Get all project" id="d5ffc3d1-1916-4e6a-89c1-4f0e66917563" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html</con:mediaType>
+          <con:status>503</con:status>
+          <con:params/>
+          <con:element>html</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="87f97775-d27d-4b7f-bfe6-6e83a70e0ccc" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.27/api/project</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+      <con:method name="Add project" id="f5f890d0-2cc4-4a34-bffe-8384301ae9d2" method="POST">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>endDate</con:name>
+            <con:value>2018/02/01</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>2018/02/01</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>name</con:name>
+            <con:value>Name project</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>Name project</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>startDate</con:name>
+            <con:value>2018/01/01</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>2018/01/01</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>201</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="d7b76f72-feb2-4f83-a3fc-d093a02cfb9a" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.27/api/project</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+      <con:method name="Edit project" id="c7e91403-4c85-47fd-9e60-26ad074e3d84" method="PUT">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>id</con:name>
+            <con:value>1</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>1</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>endDate</con:name>
+            <con:value>2019/02/01</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>2019/02/01</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>startDate</con:name>
+            <con:value>2018/02/01</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>2018/02/01</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>name</con:name>
+            <con:value>This is PUT</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>This is PUT</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:proj="http://10.225.3.27/api/project">proj:Response</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:request name="Request 1" id="85bc4dc8-35fa-4650-8348-4d6259902be0" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+          <con:request/>
+          <con:originalUri>http://10.225.3.27/api/project</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <con:entry key="endDate" value="2019/02/01"/>
+            <con:entry key="startDate" value="2018/02/01"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>id</con:entry>
+            <con:entry>endDate</con:entry>
+            <con:entry>startDate</con:entry>
+            <con:entry>name</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+      <con:method name="Delete All personal" id="04c3a16e-a81b-4531-bab0-8adada3903db" method="DELETE">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="c08b0239-a1a4-4335-afe3-6173b0134c6a" mediaType="application/json" postQueryString="false">
+          <con:settings/>
+          <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="b86125fc-c424-49f8-bec1-3ddf94be9b1f" name="TestSuite 1">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="80f3c0db-4c55-4e35-9b04-c0322d43598a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Get all personal - Request 1" id="0d3c0246-8faa-40ee-a07f-e53dd80c3344">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/personal" methodName="Get all personal" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Get all personal - Request 1" id="756e1902-e484-4ad5-a803-8e1bb9b3ba57" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/</con:originalUri>
+            <con:assertion type="Simple Contains" id="898a9e3f-7684-43c1-a7b2-25136766409c" name="Contains">
+              <con:configuration>
+                <token>Namikaze</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Count" id="7927b13b-fbc9-4dd8-9fa5-22cdbb3655ea" name="JsonPath Count">
+              <con:configuration>
+                <path>$[*]['id']</path>
+                <content>15</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple NotContains" id="d2f8e3b9-bb02-4049-a078-6034e6160a56" name="Not Contains">
+              <con:configuration>
+                <token>Hinata</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="17dfac49-d975-482b-99f1-397893cbe1bc" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+            <con:parameterOrder/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Get all timesheet - Request 1" id="f780a716-cb00-45c7-9a86-94a001e4eb54">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/timesheet" methodName="Get all timesheet" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Get all timesheet - Request 1" id="5484e116-09e4-4a47-b411-2452d0540a65" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/timesheet</con:originalUri>
+            <con:assertion type="Simple Contains" id="c3762001-cc4f-4222-a8bf-c2f552571c00" name="Contains">
+              <con:configuration>
+                <token>Timesheet</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple NotContains" id="e271116b-b7fe-4385-87d6-7dfa54a54e0c" name="Not Contains">
+              <con:configuration>
+                <token>noTimesheet</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Count" id="d3d626a9-2cf4-4c1b-bf5b-a50b4aeda01c" name="JsonPath Count">
+              <con:configuration>
+                <path>$[*]['idTimesheet']</path>
+                <content>1</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="4798d6a5-6ccf-4d5c-88bf-066b813a743e" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Get all project - Request 1" id="8315d932-9eeb-490a-b4f5-f8d2f6ef67de">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/project" methodName="Get all project" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Get all project - Request 1" id="87f97775-d27d-4b7f-bfe6-6e83a70e0ccc" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/project</con:originalUri>
+            <con:assertion type="Simple Contains" id="acf0b5c9-d58b-43f7-8f5a-1f7fae40d685" name="Contains">
+              <con:configuration>
+                <token>PUT</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple NotContains" id="8589ab44-1a05-4786-bb07-57ca6fa011eb" name="Not Contains">
+              <con:configuration>
+                <token>noPUT</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Count" id="355c0436-5532-4400-bfea-c154dc57b6cf" name="JsonPath Count">
+              <con:configuration>
+                <path>$[*]['id']</path>
+                <content>1</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="0553245b-b0ce-4f20-b527-f174a927fc31" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:loadTest id="cfc2b4fd-f271-445c-ae72-fc5b23c8a81c" name="LoadTest 1">
+        <con:settings>
+          <con:setting id="HttpSettings@close-connections">false</con:setting>
+        </con:settings>
+        <con:threadCount>5</con:threadCount>
+        <con:startDelay>0</con:startDelay>
+        <con:sampleInterval>250</con:sampleInterval>
+        <con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed>
+        <con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange>
+        <con:historyLimit>-1</con:historyLimit>
+        <con:testLimit>60</con:testLimit>
+        <con:limitType>TIME</con:limitType>
+        <con:loadStrategy>
+          <con:type>Simple</con:type>
+        </con:loadStrategy>
+        <con:assertion type="Step Status" name="Step Status"/>
+        <con:maxAssertionErrors>100</con:maxAssertionErrors>
+        <con:cancelExcessiveThreads>true</con:cancelExcessiveThreads>
+        <con:strategyInterval>500</con:strategyInterval>
+      </con:loadTest>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="d01cdcbe-6768-48f1-a28d-5ecca8201c12" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 2" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Get personal by Id - Request 1" id="663808f2-fadb-4538-9a73-86e4292a3024">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/personal/{id}" methodName="Get personal by Id" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Get personal by Id - Request 1" id="d30283dc-b8d3-42a8-bc50-53ac5dbe4f27" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/personal/1</con:originalUri>
+            <con:assertion type="Simple Contains" id="2f1e05b2-a42c-4345-81bc-1872e7646f8c" name="Contains">
+              <con:configuration>
+                <token>Kazekage</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Count" id="137b36fe-bcf5-4992-9e72-953a4534a389" name="JsonPath Count">
+              <con:configuration>
+                <path>$[*]['id']</path>
+                <content>1</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple NotContains" id="8285d8fc-4314-4e62-8b2e-8119d8760ebf" name="Not Contains">
+              <con:configuration>
+                <token>Minato</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="cf3921b8-930a-4fae-967c-d3742cd316ed" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="18" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>id</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Get Timesheet by Id - Request 1" id="390f6ca1-afba-4dff-8268-636ba39ca7bf">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/timesheet/{idTimesheet}" methodName="Get Timesheet by Id" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Get Timesheet by Id - Request 1" id="f8935c2b-cc86-444c-bde8-beaab0ce9193" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/timesheet/1</con:originalUri>
+            <con:assertion type="Simple Contains" id="36c9e5cd-7914-43fb-ad1a-1e6991674ee7" name="Contains">
+              <con:configuration>
+                <token>Timesheet</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple NotContains" id="08a191d2-a7a7-483b-bd67-44568e9dbaa8" name="Not Contains">
+              <con:configuration>
+                <token>noTimesheet</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Count" id="7c48cb28-94d0-48e6-b93e-a4ffa8d7282d" name="JsonPath Count">
+              <con:configuration>
+                <path>$[*]['idTimesheet']</path>
+                <content>1</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="ce211053-074f-4af9-bd5a-b02b579a789b" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="idTimesheet" value="6" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>idTimesheet</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Get project by Id - Request 1" id="46e58720-75e9-4068-8c9b-89a3e470f32a">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/project/{id}" methodName="Get project by Id" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Get project by Id - Request 1" id="96f92e3a-a156-4046-a6a4-fb84c8c105aa" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/project/1</con:originalUri>
+            <con:assertion type="Simple Contains" id="0da09aeb-6c0d-4988-915a-f9031fb996a7" name="Contains">
+              <con:configuration>
+                <token>PUT</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Count" id="41bf93d1-5dc7-4c09-9c2b-de86d51c1a03" name="JsonPath Count">
+              <con:configuration>
+                <path>$[*]['id']</path>
+                <content>1</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Simple NotContains" id="9804e880-c1d5-4723-b516-afd54879596d" name="Not Contains">
+              <con:configuration>
+                <token>noPUT</token>
+                <ignoreCase>false</ignoreCase>
+                <useRegEx>false</useRegEx>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="8fc83fe7-284e-4fda-ab2f-7d9e66143388" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="1" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="563ac106-6ee0-4cd5-b2a1-26bcfdc9b275" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 3" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Add personal - Request 1" id="17ee457d-2ebc-40e8-b28c-aba52708ea9c">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/personal" methodName="Add personal" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Add personal - Request 1" id="4e941cd5-9c16-4c6e-86cf-e5ffc0c62c4f" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/personal</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="0b764bd5-7459-45eb-a039-9f2011eb696a" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Add Timesheet - Request 1" id="597d4565-6742-44c8-b8e6-9b6b98c9e73c">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/timesheet" methodName="Add Timesheet" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Add Timesheet - Request 1" id="54270ea3-2230-44a1-a203-70b756be6096" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/timesheet</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="898fd34b-6d08-4acf-8905-2ce0299815a6" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>500</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Add project - Request 1" id="58c092af-2285-47f5-b142-39c7329d287e">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/project" methodName="Add project" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Add project - Request 1" id="d7b76f72-feb2-4f83-a3fc-d093a02cfb9a" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/project</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="e4e89bbc-6143-4f7b-9e4b-15678d693149" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>201</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="8d62b023-9bd1-4a6a-a68e-f1764c04cbae" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 4" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Edit personal - Request 1" id="99828cdc-c8fe-44ee-af4e-aefbdd8e7a0c">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/personal" methodName="Edit personal" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Edit personal - Request 1" id="4ea4396e-b8ec-41a5-a893-de865af565d6" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/personal</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="dd62e475-2887-4fb9-b7a5-8f66e9d865d5" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="20" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Edit Timesheet - Request 1" id="a0dd06b5-ca29-471b-9ca2-414a13bbe452">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/timesheet" methodName="Edit Timesheet" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Edit Timesheet - Request 1" id="4ffc382e-a223-4d9e-ba6a-6edf247beb09" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/timesheet</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="3ccdbd6a-df92-476f-984c-90eb3cabfa1b" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>500</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Edit project - Request 1" id="ab4a9ce6-42e9-4a0a-98c8-450d699d4430">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/project" methodName="Edit project" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Edit project - Request 1" id="85bc4dc8-35fa-4650-8348-4d6259902be0" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/project</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="1a1e1b09-06d7-471c-9d4b-1c34e707e02d" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <con:entry key="endDate" value="2019/02/01"/>
+              <con:entry key="startDate" value="2018/02/01"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>id</con:entry>
+              <con:entry>endDate</con:entry>
+              <con:entry>startDate</con:entry>
+              <con:entry>name</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="116bcc11-c8b7-4163-bd8e-6265861abd29" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 5" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Delete Personal by Id - Request 1" id="9e930fd6-ab22-46b9-99d7-9a0c9212d5f1">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/personal/{id}" methodName="Delete Personal by Id" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Delete Personal by Id - Request 1" id="89cf8c1b-8290-4bcd-9c14-507bc44449c2" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/personal/2</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="531a4170-db05-4d2e-ba03-2ebd38667269" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>204</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="21" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Delete Timesheet by Id - Request 1" id="c1455593-a034-46ae-aa94-70fd2245cba1">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/timesheet/{idTimesheet}" methodName="Delete Timesheet by Id" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Delete Timesheet by Id - Request 1" id="a95228a3-9168-4885-a5b1-1b8f918e48aa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/timesheet/1</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="cb7b00ec-5af4-4c32-ba3a-b566a53665eb" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>500</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="idTimesheet" value="1" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>idTimesheet</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Delete project by Id - Request 1" id="ce3525ba-8550-442c-bcdb-3fe3ce6d1b4c">
+        <con:settings/>
+        <con:config service="http://10.225.3.27" resourcePath="/api/project/{id}" methodName="Delete project by Id" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Delete project by Id - Request 1" id="ef76dfb1-02ab-4153-8979-d7533ad32aaf" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://10.225.3.27:8080</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://10.225.3.27/api/project/2</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="3c9acc57-8b15-4903-aa7f-e77eeeab23b4" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>204</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="id" value="4" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:properties/>
+  </con:testSuite>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:sensitiveInformation/>
+</con:soapui-project>
