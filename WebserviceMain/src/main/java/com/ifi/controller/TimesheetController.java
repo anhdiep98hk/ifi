@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.ifi.entity.Personal;
-import com.ifi.entity.Project;
 import com.ifi.entity.Timesheet;
 import com.ifi.service.PersonalService;
 import com.ifi.service.ProjectService;
