@@ -3,26 +3,26 @@
  */
 'use strict';
 
-angular.module('myApp').factory('PersonalService',['$localStorage','$http','$q','urls', //Đặt tên cho service (PersonalService) và định nghĩa các thư viện cần dùng
+angular.module('myApp').factory('ProjectService',['$localStorage','$http','$q','urls',
 	function($localStorage,$http,$q,urls){
 		var factory = {
-				loadAllPersonals: loadAllPersonals,
-				getAllPersonals: getAllPersonals,
-				getPersonal: getPersonal,
-				createPersonal:createPersonal,
-				updatePersonal:updatePersonal,
-				removePersonal:removePersonal
+				loadAllProject:  loadAllProject,
+				getAllProjects:  getAllProjects,
+				getProject: getProject,
+				createProject:createProject,
+				updateProject:updateProject,
+				removeProject:removeProject
 		};
 		
 		return factory;
 		
 		
 		
-		function loadAllPersonals(){
+		function loadAllProject(){
 				var deferred = $q.defer();
-				$http.get(urls.PERSONAL_SERVICE_API)
+				$http.get(urls.PROJECT_SERVICE_API)
 				.then(function(response) {
-					$localStorage.personals = response.data;
+					$localStorage.projects = response.data;
 					deferred.resolve(response);
 				},function(errResponse){
 					deferred.reject(errResponse);
@@ -31,13 +31,13 @@ angular.module('myApp').factory('PersonalService',['$localStorage','$http','$q',
 			return deferred.promise;
 		}
 		
-		function getAllPersonals() {
-			return $localStorage.personals;
+		function getAllProjects() {
+			return $localStorage.projects;
 		}
 		
-		function getPersonal(id) {
+		function getProject(id) {
 			var deferred = $q.defer();
-			$http.get(urls.PERSONAL_SERVICE_API + id) //http://localhost:8181/api/personal/{id}
+			$http.get(urls.PROJECT_SERVICE_API + id)
 			.then(function(response) {
 				deferred.resolve(response.data);
 			}, function(errResponse) {
@@ -46,11 +46,11 @@ angular.module('myApp').factory('PersonalService',['$localStorage','$http','$q',
 			return deferred.promise;
 		}
 		
-		function createPersonal(personal) {
+		function createProject(project) {
 			var defferred = $q.defer();
-			$http.post(urls.PERSONAL_SERVICE_API, personal).then(
+			$http.post(urls.PROJECT_SERVICE_API, project).then(
 					function(response) {
-						loadAllPersonals();
+						loadAllProject();
 						defferred.resolve(response.data);
 					},function(errResponse){
 						defferred.reject(errResponse);
@@ -59,11 +59,11 @@ angular.module('myApp').factory('PersonalService',['$localStorage','$http','$q',
 			return defferred.promise;
 		}
 		
-		function updatePersonal(id,personal) {
+		function updateProject(id,project) {
 			var defferred = $q.defer();
-			$http.put(urls.PERSONAL_SERVICE_API + id, personal).then(
+			$http.put(urls.PROJECT_SERVICE_API + id, project).then(
 					function(response) {
-						loadAllPersonals();
+						loadAllProject();
 						defferred.resolve(response.data);
 					},
 					function(errResponse) {
@@ -73,11 +73,11 @@ angular.module('myApp').factory('PersonalService',['$localStorage','$http','$q',
 			return defferred.promise;
 		}
 		
-		function removePersonal(id) {
+		function removeProject(id) {
 			var defferred = $q.defer();
-			$http.delete(urls.PERSONAL_SERVICE_API+id).then(
+			$http.delete(urls.PROJECT_SERVICE_API+id).then(
 					function(response) {
-						loadAllPersonals();
+						loadAllProject();
 						defferred.resolve(response.data);
 					},
 					function(errResponse){

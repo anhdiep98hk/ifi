@@ -9,13 +9,21 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/main.css" />
+
 <script type="text/javascript" src="/js/angular.min.js"></script>
 <script type="text/javascript" src="/js/angular-ui-router.js"></script>
 <script type="text/javascript" src="/js/localforage.min.js"></script>
 <script type="text/javascript" src="/js/ngStorage.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
+
 <script type="text/javascript" src="/js/personal/PersonalService.js"></script>
 <script type="text/javascript" src="/js/personal/PersonalController.js"></script>
+
+<script type="text/javascript" src="/js/project/ProjectService.js"></script>
+<script type="text/javascript" src="/js/project/ProjectController.js"></script>
+
+<script type="text/javascript" src="/js/timesheet/TimesheetService.js"></script>
+<script type="text/javascript" src="/js/timesheet/TimesheetController.js"></script>
 
 </head>
 <body>
@@ -26,8 +34,8 @@
 		<a ui-sref="timesheet" ui-sref-active="active">Timesheets</a>
 	</div>
 
-	<div class="main">
-		<ui-view></ui-view>
+	<div class="main" ui-view>
+<!-- 		<ui-view></ui-view> -->
 	</div>
 
 

@@ -22,7 +22,7 @@
                         <div class="form-group col-md-12">
                             <label class="col-md-2 control-lable" for="age">Date of Birth</label>
                             <div class="col-md-7">
-                                <input type="date" ng-model="ctrl.personal.dob" id="age" class="form-control input-sm"  required/>
+                                <input type="date" ng-model="ctrl.personal.dob" id="dob" class="form-control input-sm"  required/>
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                         <div class="form-group col-md-12">
                             <label class="col-md-2 control-lable" for="gender">Gender</label>
                             <div class="col-md-7">
-                                <input type="radio" ng-model="ctrl.personal.gender" id="gender"   value="male"/>Male
+                                <input type="radio" ng-model="ctrl.personal.gender" id="gender"   value="Male"/>Male
                                 <input type="radio" ng-model="ctrl.personal.gender" id="gender"   value="Female"/>Female
                             </div>
                         </div>
@@ -65,8 +65,8 @@
             </div>
         </div>    
     </div>
-
-	
+<hr/>
+	<h2>List of Person</h2>
 	<table class="table table-hover">
 		<thead>
 			<tr>

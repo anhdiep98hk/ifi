@@ -54,6 +54,7 @@ public class ProjectController {
 	@PutMapping(value = "/project/{id}")
 	public ResponseEntity<?> updatePersonal(@PathVariable("id") int id,@RequestBody Project project) {
 		Project project2 = projectService.getProjectById(id);
+		project2.setName(project.getName());
 		project2.setEndDate(project.getEndDate());
 		project2.setStartDate(project.getStartDate());
 		projectService.updateProject(project2);

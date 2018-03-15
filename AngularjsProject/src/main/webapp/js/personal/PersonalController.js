@@ -73,7 +73,7 @@ angular.module('myApp').controller('PersonalController', ['PersonalService','$sc
 					}
 			);
 		
-	}
+	}personal
 	
 	function personalToSubmit(id) {
 		self.successMessage = '';
@@ -81,6 +81,7 @@ angular.module('myApp').controller('PersonalController', ['PersonalService','$sc
 		PersonalService.getPersonal(id).then(
 				function(personal) {
 					self.personal = personal;
+					self.personal.dob = new Date(self.personal.dob);
 				}
 		);
 	}

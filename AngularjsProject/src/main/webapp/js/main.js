@@ -15,6 +15,7 @@ myApp.config(['$stateProvider','$urlRouterProvider',
 		url : '/',
 		templateUrl : '/js/home/home.template.jsp'
 	};
+	
 	var personalState = {
 		name : 'personal',
 		url : '/personal',
@@ -29,33 +30,39 @@ myApp.config(['$stateProvider','$urlRouterProvider',
 			}
 		}
 	};
-	
-	var personalStateForm = {
-			name : 'personal.form',
-			url : '/form',
-			views: {
-	             'nestedViews': {
-	            	 templateUrl : '/js/personal/personalform.template.jsp',
-	     			controller : 'PersonalController',
-	     			controllerAs : "ctrl"
-	             }
-		}
-	};
+
 
 	var projectState = {
 		name : 'project',
 		url : '/project',
-		templateUrl : '/js/project/project.template.jsp'
+		templateUrl : '/js/project/project.template.jsp',
+		controller : 'ProjectController',
+		controllerAs : "ctrl",
+		resolve : {
+			projects: function($q, ProjectService) {
+				var deferred = $q.defer();
+				ProjectService.loadAllProject().then(deferred.resolve, deferred.resolve);
+				return deferred.promise;
+			}
+		}
 	};
 
 	var timesheetState = {
 		name : 'timesheet',
 		url : '/timesheet',
-		templateUrl : '/js/timesheet/timesheet.template.jsp'
+		templateUrl : '/js/timesheet/timesheet.template.jsp',
+		controller : 'TimesheetController',
+		controllerAs : "ctrl",
+		resolve : {
+			projects: function($q, TimesheetService) {
+				var deferred = $q.defer();
+				TimesheetService.loadAllTimesheet().then(deferred.resolve, deferred.resolve);
+				return deferred.promise;
+			}
+		}
 	};
 
 	$stateProvider.state(personalState);
-	$stateProvider.state(personalStateForm);
 	$stateProvider.state(projectState);
 	$stateProvider.state(timesheetState);
 	$stateProvider.state(homeState);

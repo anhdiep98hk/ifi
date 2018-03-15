@@ -3,26 +3,26 @@
  */
 'use strict';
 
-angular.module('myApp').factory('PersonalService',['$localStorage','$http','$q','urls', //Đặt tên cho service (PersonalService) và định nghĩa các thư viện cần dùng
+angular.module('myApp').factory('TimesheetService',['$localStorage','$http','$q','urls',
 	function($localStorage,$http,$q,urls){
 		var factory = {
-				loadAllPersonals: loadAllPersonals,
-				getAllPersonals: getAllPersonals,
-				getPersonal: getPersonal,
-				createPersonal:createPersonal,
-				updatePersonal:updatePersonal,
-				removePersonal:removePersonal
+				loadAllTimesheet:  loadAllTimesheet,
+				getAllTimesheets:  getAllTimesheets,
+				getTimesheet: getTimesheet,
+				createTimesheet:createTimesheet,
+				updateTimesheet:updateTimesheet,
+				removeTimesheet:removeTimesheet
 		};
 		
 		return factory;
 		
 		
 		
-		function loadAllPersonals(){
+		function loadAllTimesheet(){
 				var deferred = $q.defer();
-				$http.get(urls.PERSONAL_SERVICE_API)
+				$http.get(urls.TIMESHEET_SERVICE_API)
 				.then(function(response) {
-					$localStorage.personals = response.data;
+					$localStorage.timesheets = response.data;
 					deferred.resolve(response);
 				},function(errResponse){
 					deferred.reject(errResponse);
@@ -31,13 +31,13 @@ angular.module('myApp').factory('PersonalService',['$localStorage','$http','$q',
 			return deferred.promise;
 		}
 		
-		function getAllPersonals() {
-			return $localStorage.personals;
+		function getAllTimesheets() {
+			return $localStorage.timesheets;
 		}
 		
-		function getPersonal(id) {
+		function getTimesheet(id) {
 			var deferred = $q.defer();
-			$http.get(urls.PERSONAL_SERVICE_API + id) //http://localhost:8181/api/personal/{id}
+			$http.get(urls.TIMESHEET_SERVICE_API + id)
 			.then(function(response) {
 				deferred.resolve(response.data);
 			}, function(errResponse) {
@@ -46,11 +46,11 @@ angular.module('myApp').factory('PersonalService',['$localStorage','$http','$q',
 			return deferred.promise;
 		}
 		
-		function createPersonal(personal) {
+		function createTimesheet(timesheet) {
 			var defferred = $q.defer();
-			$http.post(urls.PERSONAL_SERVICE_API, personal).then(
+			$http.post(urls.TIMESHEET_SERVICE_API, timesheet).then(
 					function(response) {
-						loadAllPersonals();
+						loadAllTimesheet();
 						defferred.resolve(response.data);
 					},function(errResponse){
 						defferred.reject(errResponse);
@@ -59,11 +59,11 @@ angular.module('myApp').factory('PersonalService',['$localStorage','$http','$q',
 			return defferred.promise;
 		}
 		
-		function updatePersonal(id,personal) {
+		function updateTimesheet(id,timesheet) {
 			var defferred = $q.defer();
-			$http.put(urls.PERSONAL_SERVICE_API + id, personal).then(
+			$http.put(urls.TIMESHEET_SERVICE_API + id, timesheet).then(
 					function(response) {
-						loadAllPersonals();
+						loadAllTimesheet();
 						defferred.resolve(response.data);
 					},
 					function(errResponse) {
@@ -73,11 +73,11 @@ angular.module('myApp').factory('PersonalService',['$localStorage','$http','$q',
 			return defferred.promise;
 		}
 		
-		function removePersonal(id) {
+		function removeTimesheet(id) {
 			var defferred = $q.defer();
-			$http.delete(urls.PERSONAL_SERVICE_API+id).then(
+			$http.delete(urls.TIMESHEET_SERVICE_API+id).then(
 					function(response) {
-						loadAllPersonals();
+						loadAllTimesheet();
 						defferred.resolve(response.data);
 					},
 					function(errResponse){
@@ -86,7 +86,5 @@ angular.module('myApp').factory('PersonalService',['$localStorage','$http','$q',
 			);
 			return defferred.promise;
 		}
-		
-		
 	}
 ]);
