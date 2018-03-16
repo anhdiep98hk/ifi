@@ -8,6 +8,10 @@ angular.module('myApp').factory('TimesheetService',['$localStorage','$http','$q'
 		var factory = {
 				loadAllTimesheet:  loadAllTimesheet,
 				getAllTimesheets:  getAllTimesheets,
+				loadAllPersonals: loadAllPersonals,
+				getAllPersonals: getAllPersonals,
+				loadAllProject: loadAllProject,
+				getAllProjects: getAllProjects,
 				getTimesheet: getTimesheet,
 				createTimesheet:createTimesheet,
 				updateTimesheet:updateTimesheet,
@@ -31,8 +35,42 @@ angular.module('myApp').factory('TimesheetService',['$localStorage','$http','$q'
 			return deferred.promise;
 		}
 		
+		function loadAllPersonals(){
+				var deferred = $q.defer();
+				$http.get(urls.PERSONAL_SERVICE_API)
+				.then(function(response) {
+					$localStorage.personals = response.data;
+					deferred.resolve(response);
+				},function(errResponse){
+					deferred.reject(errResponse);
+				}
+			);
+			return deferred.promise;
+		}
+		
+		function loadAllProject(){
+			var deferred = $q.defer();
+			$http.get(urls.PROJECT_SERVICE_API)
+			.then(function(response) {
+				$localStorage.projects = response.data;
+				deferred.resolve(response);
+			},function(errResponse){
+				deferred.reject(errResponse);
+			}
+		);
+		return deferred.promise;
+	}
+		
 		function getAllTimesheets() {
 			return $localStorage.timesheets;
+		}
+		
+		function getAllProjects() {
+			return $localStorage.projects;
+		}
+		
+		function getAllPersonals() {
+			return $localStorage.personals;
 		}
 		
 		function getTimesheet(id) {

@@ -1,16 +1,19 @@
 
 'use strict';
-angular.module('myApp').controller('ProjectController', ['ProjectService','$scope',function(ProjectService,$scope){
+angular.module('myApp').controller('TimesheetController', ['TimesheetService','$scope',function(TimesheetService,$scope){
 	var self = this;
-	self.project = {};
-	self.projects = [];
+	self.timesheet = {};
+	self.timesheets = [];
+	self.personals = [];
 	
 	self.submit = submit;
+	self.getAllTimesheets = getAllTimesheets;
+	self.getAllPersonals = getAllPersonals;
 	self.getAllProjects = getAllProjects;
-	self.createProject = createProject;
-	self.updateProject = updateProject;
-	self.removeProject = removeProject;
-	self.projectToSubmit = projectToSubmit;
+	self.createTimesheet = createTimesheet;
+	self.updateTimesheet = updateTimesheet;
+	self.removeTimesheet = removeTimesheet;
+	self.timesheetToSubmit = timesheetToSubmit;
 	self.reset = reset;
 	
 	
@@ -21,51 +24,60 @@ angular.module('myApp').controller('ProjectController', ['ProjectService','$scop
 
 	
 	function submit(){
-		if(self.project.id === undefined || self.project.id === null){
-			createProject(self.project);
+		if(self.timesheet.idTimesheet === undefined || self.timesheet.idTimesheet === null){
+			createTimesheet(self.timesheet);
 		}else{
-			updateProject(self.project.id,self.project);
+			updateTimesheet(self.timesheet.id,self.timesheet);
 		}
 	}
 	
+	function getAllTimesheets(){
+		return TimesheetService.getAllTimesheets();
+	}
+	function getAllPersonals(){
+		return TimesheetService.getAllPersonals();
+	}
+	
 	function getAllProjects(){
-		return ProjectService.getAllProjects();
+		return TimesheetService.getAllProjects();
 	}
 	
-	function createProject(project) {
-		ProjectService.createProject(project).then(
+	
+	function createTimesheet(timesheet) {
+		TimesheetService.createTimesheet(timesheet).then(
 				function(response) {
-					self.successMessage = 'Project created successfully';
+					self.successMessage = 'Timesheet created successfully';
 					self.errorMessage = '';
 					self.done = true;
-					self.project = {};
-					$scope.projectForm.$setPristine();
+					self.timesheet = {};
+					$scope.timesheetForm.$setPristine();
 				},function(errResponse){
-					self.errorMessage = 'Error while createing Project: '+ errResponse;
+					self.errorMessage = 'Error while createing Timesheet: '+ errResponse;
 					self.successMessage = '';
+					console.log(timesheet.personal.id);
 				}
 		);
 		
 	}
 	
-	function updateProject(id,project) {
-		ProjectService.updateProject(id, project).then(
+	function updateTimesheet(id,timesheet) {
+		TimesheetService.updateTimesheet(id, timesheet).then(
 				function(response){
-					self.successMessage = 'Project updated successfully';
+					self.successMessage = 'Timesheet updated successfully';
 					self.errorMessage = '';
 					self.done = true;
-					$scope.projectForm.$setPristine();
+					$scope.timesheetForm.$setPristine();
 				}, function(errResponse){
-					self.errorMessage = 'Error while updateing Project: '+errResponse;
+					self.errorMessage = 'Error while updateing Timesheet: '+errResponse;
 					self.successMessage = '';
 				}
 		);
 	}
-	function removeProject(id) {
+	function removeTimesheet(id) {
 		
-			ProjectService.removeProject(id).then(
+		TimesheetService.removeTimesheet(id).then(
 					function (response) {
-						self.successMessage = 'Project deleted successfully';
+						self.successMessage = 'Timesheet deleted successfully';
 						self.errorMessage = '';
 						self.done = true;
 					}
@@ -73,22 +85,20 @@ angular.module('myApp').controller('ProjectController', ['ProjectService','$scop
 		
 	}
 	
-	function projectToSubmit(id) {
+	function timesheetToSubmit(id) {
 		self.successMessage = '';
 		self.errorMessage = '';
-		ProjectService.getProject(id).then(
-				function(project) {
-					self.project = project;
-					self.project.endDate = new Date(self.project.endDate);
-					self.project.startDate = new Date(self.project.startDate);
+		TimesheetService.getTimesheet(id).then(
+				function(timesheet) {
+					self.timesheet = timesheet;
 				}
 		);
 	}
 	function reset(){
         self.successMessage='';
         self.errorMessage='';
-        self.project={};
-        $scope.projectForm.$setPristine();
+        self.timesheet={};
+        $scope.timesheetForm.$setPristine();
     }
 }])
 

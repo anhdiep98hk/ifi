@@ -73,7 +73,7 @@ angular.module('myApp').controller('PersonalController', ['PersonalService','$sc
 					}
 			);
 		
-	}personal
+	}
 	
 	function personalToSubmit(id) {
 		self.successMessage = '';

@@ -6,8 +6,8 @@
 angular.module('myApp').factory('ProjectService',['$localStorage','$http','$q','urls',
 	function($localStorage,$http,$q,urls){
 		var factory = {
-				loadAllProject:  loadAllProject,
-				getAllProjects:  getAllProjects,
+				loadAllProject: loadAllProject,
+				getAllProjects: getAllProjects,
 				getProject: getProject,
 				createProject:createProject,
 				updateProject:updateProject,
