@@ -18,9 +18,9 @@
 						<div class="form-group col-md-12">
 							<label class="col-md-2 control-lable" for="uname">Personal</label>
 							<div class="col-md-7">
-								<select class="form-control" ng-model="ctrl.timesheet.personal" required="required">
+								<select class="form-control" ng-model="ctrl.timesheet.personal.id" required="required">
 									<option value="">----- Select personal -----</option>
-									<option ng-repeat="p in ctrl.getAllPersonals()" value="{{p.id}}">{{p.fullname}}</option>
+									<option ng-repeat="p in ctrl.getAllPersonals()" ng-selected="ctrl.timesheet.personal.id == p.id" value="{{p.id}}">{{p.fullname}}</option>
 								</select>
 							</div>
 						</div>
@@ -28,11 +28,11 @@
 
 					<div class="row">
 						<div class="form-group col-md-12">
-							<label class="col-md-2 control-lable">Start date</label>
+							<label class="col-md-2 control-lable">Select Project]</label>
 							<div class="col-md-7">
-								<select class="form-control" ng-model="ctrl.timesheet.project" required="required">
+								<select class="form-control" ng-model="ctrl.timesheet.project.id" required="required">
 									<option value="">----- Select project -----</option>
-									<option ng-repeat="p in ctrl.getAllProjects()" value="{{p.id}}">{{p.name}}</option>
+									<option ng-repeat="p in ctrl.getAllProjects()" value="{{p.id}}" ng-selected="ctrl.timesheet.project.id == p.id">{{p.name}}</option>
 								</select>
 							</div>
 						</div>
@@ -79,6 +79,7 @@
 	<table class="table table-hover">
 		<thead>
 			<tr>
+			<th>ID</th>
 				<th>Location</th>
 				<th>Work Day</th>
 				<th>Personal</th>
@@ -87,15 +88,15 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="p in ctrl.getAllTimesheets()">
+			<td>{{p.idTimesheet}}</td>
 				<td>{{p.location}}</td>
 				<td>{{p.workday}}</td>
 				<td>{{p.personal.fullname}}</td>
 				<td>{{p.project.name}}</td>
-				<td><button type="button" ng-click="ctrl.projectToSubmit(p.id)"
+				<td><button type="button" ng-click="ctrl.timesheetToSubmit(p.idTimesheet)"
 						class="btn btn-success custom-width">Edit</button></td>
-				<td><button type="button" ng-click="ctrl.removeProject(p.id)"
+				<td><button type="button" ng-click="ctrl.confirm(p.idTimesheet)"
 						class="btn btn-danger custom-width">Remove</button></td>
-
 			</tr>
 		</tbody>
 	</table>

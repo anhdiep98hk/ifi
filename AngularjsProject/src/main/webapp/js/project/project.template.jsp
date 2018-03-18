@@ -66,7 +66,7 @@
 				<td>{{p.endDate | date: "dd/MM/yyyy"}}</td>
 				<td><button type="button" ng-click="ctrl.projectToSubmit(p.id)"
 						class="btn btn-success custom-width">Edit</button></td>
-				<td><button type="button" ng-click="ctrl.removeProject(p.id)"
+				<td><button type="button" ng-click="ctrl.confirm(p.id)"
 						class="btn btn-danger custom-width">Remove</button></td>
 
 			</tr>

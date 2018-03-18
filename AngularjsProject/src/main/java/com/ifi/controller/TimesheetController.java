@@ -64,7 +64,8 @@ public class TimesheetController {
 	public ResponseEntity<?> updateTimesheet(@PathVariable("id") int id,@RequestBody Timesheet timesheet){
 		int personal = timesheet.getPersonal().getId();
 		int project = timesheet.getProject().getId();
-		Timesheet timesheet2 = new Timesheet(timesheet.getIdTimesheet(),timesheet.getLocation(),timesheet.getWorkday(),personalService.getPersonalById(personal),projectService.getProjectById(project));
+		Timesheet timesheet2 = timesheetService.getTimesheetById(id);
+		timesheet2 =  new Timesheet(timesheet.getIdTimesheet(),timesheet.getLocation(),timesheet.getWorkday(),personalService.getPersonalById(personal),projectService.getProjectById(project));
 		timesheetService.updateTimesheet(timesheet2);
 		return new ResponseEntity<Timesheet>(timesheet2, HttpStatus.OK);
 	}

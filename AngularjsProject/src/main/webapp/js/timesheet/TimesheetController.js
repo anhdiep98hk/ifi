@@ -1,6 +1,6 @@
 
 'use strict';
-angular.module('myApp').controller('TimesheetController', ['TimesheetService','$scope',function(TimesheetService,$scope){
+angular.module('myApp').controller('TimesheetController', ['TimesheetService','$window','$scope',function(TimesheetService,$window,$scope){
 	var self = this;
 	self.timesheet = {};
 	self.timesheets = [];
@@ -13,6 +13,7 @@ angular.module('myApp').controller('TimesheetController', ['TimesheetService','$
 	self.createTimesheet = createTimesheet;
 	self.updateTimesheet = updateTimesheet;
 	self.removeTimesheet = removeTimesheet;
+	self.confirm = confirm;
 	self.timesheetToSubmit = timesheetToSubmit;
 	self.reset = reset;
 	
@@ -27,7 +28,7 @@ angular.module('myApp').controller('TimesheetController', ['TimesheetService','$
 		if(self.timesheet.idTimesheet === undefined || self.timesheet.idTimesheet === null){
 			createTimesheet(self.timesheet);
 		}else{
-			updateTimesheet(self.timesheet.id,self.timesheet);
+			updateTimesheet(self.timesheet.idTimesheet,self.timesheet);
 		}
 	}
 	
@@ -66,6 +67,7 @@ angular.module('myApp').controller('TimesheetController', ['TimesheetService','$
 					self.successMessage = 'Timesheet updated successfully';
 					self.errorMessage = '';
 					self.done = true;
+					self.timesheet = {};
 					$scope.timesheetForm.$setPristine();
 				}, function(errResponse){
 					self.errorMessage = 'Error while updateing Timesheet: '+errResponse;
@@ -83,6 +85,12 @@ angular.module('myApp').controller('TimesheetController', ['TimesheetService','$
 					}
 			);
 		
+	}
+	
+	function confirm(id) {
+		if ($window.confirm("Are you want to delete it?")) {
+			removeProject(id);
+        }
 	}
 	
 	function timesheetToSubmit(id) {

@@ -67,19 +67,36 @@
     </div>
 <hr/>
 	<h2>List of Person</h2>
+	<form class="form-inline">
+        <div class="form-group">
+            <label >Search</label>
+            <input type="text" ng-model="search" class="form-control" placeholder="Search">
+        </div>
+    </form>
 	<table class="table table-hover">
 		<thead>
 			<tr>
-				<th>ID</th>
-				<th>Address</th>
-				<th>Date Of Birth</th>
-				<th>Fullname</th>
-				<th>Gender</th>
+				<th ng-click="sort('id')">ID
+					<span class="glyphicon sort-icon" ng-show="sortKey=='id'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+				</th>
+				
+				<th ng-click="sort('address')">Address
+					<span class="glyphicon sort-icon" ng-show="sortKey=='address'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+				</th>
+				<th ng-click="sort('dob')">Date Of Birth
+					<span class="glyphicon sort-icon" ng-show="sortKey=='dob'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+				</th>
+				<th ng-click="sort('fullname')">Fullname
+					<span class="glyphicon sort-icon" ng-show="sortKey=='fullname'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+				</th>
+				<th ng-click="sort('gender')">Gender
+					<span class="glyphicon sort-icon" ng-show="sortKey=='gender'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+				</th>
 				<th>Phone</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="p in ctrl.getAllPersonals()">
+			<tr dir-paginate="p in ctrl.getAllPersonals() | orderBy:sortKey:reverse | filter:search | itemsPerPage:2" current-page="currentPage">
 				<td>{{p.id}}</td>
 				<td>{{p.address}}</td>
 				<td>{{p.dob | date: "dd/MM/yyyy"}}</td>
@@ -88,10 +105,16 @@
 				<td>{{p.phone}}</td>
 				<td><button type="button" ng-click="ctrl.personalToSubmit(p.id)"
 						class="btn btn-success custom-width">Edit</button></td>
-				<td><button type="button" ng-click="ctrl.removePersonal(p.id)"
+				<td><button type="button" ng-click="ctrl.confirm(p.id)"
 						class="btn btn-danger custom-width">Remove</button></td>
 
 			</tr>
 		</tbody>
+		
 	</table>
+	<dir-pagination-controls
+					max-size="2"
+					direction-links="true"
+					boundary-links="true">
+	</dir-pagination-controls>
 </div>

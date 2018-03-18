@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', [ 'ui.router','ngStorage' ]);
+var myApp = angular.module('myApp', [ 'ui.router','ngStorage']);
 
 
 myApp.constant('urls', {

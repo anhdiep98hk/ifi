@@ -24,7 +24,7 @@ public class Timesheet implements Serializable {
 
 	private String location;
 
-	private String workday;
+	private int workday;
 
 	//bi-directional many-to-one association to Personal
 	@ManyToOne
@@ -41,7 +41,7 @@ public class Timesheet implements Serializable {
 	
 	
 
-	public Timesheet(String location, String workday, Personal personal, Project project) {
+	public Timesheet(String location, int workday, Personal personal, Project project) {
 		super();
 		this.location = location;
 		this.workday = workday;
@@ -53,7 +53,7 @@ public class Timesheet implements Serializable {
 
 
 
-	public Timesheet(int idTimesheet, String location, String workday, Personal personal, Project project) {
+	public Timesheet(int idTimesheet, String location, int workday, Personal personal, Project project) {
 		super();
 		this.idTimesheet = idTimesheet;
 		this.location = location;
@@ -80,11 +80,11 @@ public class Timesheet implements Serializable {
 		this.location = location;
 	}
 
-	public String getWorkday() {
+	public int getWorkday() {
 		return this.workday;
 	}
 
-	public void setWorkday(String workday) {
+	public void setWorkday(int workday) {
 		this.workday = workday;
 	}
 
