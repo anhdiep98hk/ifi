@@ -43,8 +43,25 @@
 						<div class="form-group col-md-12">
 							<label class="col-md-2 control-lable">Location</label>
 							<div class="col-md-7">
-								<input type="text" ng-model="ctrl.timesheet.location"
-									class="form-control input-sm" required />
+								<input type="text" name="location" ng-model="ctrl.timesheet.location"
+									class="form-control input-sm" required ng-minlength="3" ng-pattern="/^[a-zA-Z0-9_ ]*$/"/>
+							</div>
+							
+							<div class="col-md-3">
+								<i class="fa fa-check text-success"
+									ng-show="timesheetForm.location.$dirty && timesheetForm.location.$valid">
+								</i>
+								<div
+									ng-show="timesheetForm.location.$dirty && timesheetForm.location.$invalid"
+									class="text-danger">
+									<i class="fa fa-times text-danger"></i>
+								</div>
+
+								<span ng-show="timesheetForm.location.$error.minlength"
+									class="error">- Location must be at least 3 characters</span><br/>
+
+								<span ng-show="timesheetForm.location.$error.pattern"
+									class="error">- Location is only text</span>
 							</div>
 						</div>
 					</div>
@@ -79,7 +96,6 @@
 	<table class="table table-hover">
 		<thead>
 			<tr>
-			<th>ID</th>
 				<th>Location</th>
 				<th>Work Day</th>
 				<th>Personal</th>

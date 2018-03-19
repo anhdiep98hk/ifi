@@ -29,7 +29,7 @@ angular.module('myApp').controller(
 							
 							self.onlyIntegers = /^\d+$/;
 					        self.onlyNumbers = /^\d+([,.]\d+)?$/;
-					        self.onlyText = /^[a-zA-Z]+$/;
+					        self.onlyText = /^[a-zA-Z0-9_ ]*$/;
 							
 							$scope.sort = function(keyname){
 								$scope.sortKey = keyname;   //set the sortKey to the param passed

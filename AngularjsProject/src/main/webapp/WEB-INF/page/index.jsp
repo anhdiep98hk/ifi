@@ -10,10 +10,10 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/main.css"/>
+<link rel="stylesheet"
+  href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />
 
-<style>
-
-</style>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <script type="text/javascript" src="/js/angular.min.js"></script>
 <script type="text/javascript" src="/js/angular-ui-router.js"></script>

@@ -24,6 +24,22 @@ angular
 							self.successMessage = '';
 							self.errorMessage = '';
 							self.done = false;
+							
+							$scope.$watch('ctrl.project.startDate', validateDates);
+							$scope.$watch('ctrl.project.endDate', validateDates);
+							 
+							function validateDates() {
+							    if (!$scope.model) return;
+							    if ($scope.projectForm.startDate.$error.invalidDate || $scope.projectForm.endDate.$error.invalidDate) {
+							        $scope.projectForm.startDate.$setValidity("endBeforeStart", true);  //already invalid (per validDate directive)
+							    } else {
+							        //depending on whether the user used the date picker or typed it, this will be different (text or date type).  
+							        //creating a new date object takes care of that.  
+							        var endDate = new Date($scope.ctrl.project.startDate);
+							        var startDate = new Date($scope.ctrl.project.endDate);
+							        $scope.projectForm.startDate.$setValidity("endBeforeStart", endDate >= startDate);
+							    }
+							}
 
 							function submit() {
 								if (self.project.id === undefined
