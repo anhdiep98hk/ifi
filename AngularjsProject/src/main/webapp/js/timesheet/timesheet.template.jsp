@@ -28,7 +28,7 @@
 
 					<div class="row">
 						<div class="form-group col-md-12">
-							<label class="col-md-2 control-lable">Select Project]</label>
+							<label class="col-md-2 control-lable">Select Project</label>
 							<div class="col-md-7">
 								<select class="form-control" ng-model="ctrl.timesheet.project.id" required="required">
 									<option value="">----- Select project -----</option>
@@ -88,7 +88,6 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="p in ctrl.getAllTimesheets()">
-			<td>{{p.idTimesheet}}</td>
 				<td>{{p.location}}</td>
 				<td>{{p.workday}}</td>
 				<td>{{p.personal.fullname}}</td>

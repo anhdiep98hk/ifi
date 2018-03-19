@@ -18,7 +18,6 @@ import java.util.Set;
  */
 @Entity
 @Table(name="project")
-@NamedQuery(name="Project.findAll", query="SELECT p FROM Project p")
 @Proxy(lazy = false)
 public class Project implements Serializable {
 	private static final long serialVersionUID = 1L;

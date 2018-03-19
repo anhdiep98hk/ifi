@@ -37,7 +37,7 @@ angular.module('myApp').factory('PersonalService',['$localStorage','$http','$q',
 		
 		function getPersonal(id) {
 			var deferred = $q.defer();
-			$http.get(urls.PERSONAL_SERVICE_API + id) //http://localhost:8181/api/personal/{id}
+			$http.get(urls.PERSONAL_SERVICE_API + id)
 			.then(function(response) {
 				deferred.resolve(response.data);
 			}, function(errResponse) {

@@ -12,7 +12,6 @@ import org.hibernate.annotations.Proxy;
  */
 @Entity
 @Table(name="timesheet")
-@NamedQuery(name="Timesheet.findAll", query="SELECT t FROM Timesheet t")
 @Proxy(lazy = false)
 public class Timesheet implements Serializable {
 	private static final long serialVersionUID = 1L;

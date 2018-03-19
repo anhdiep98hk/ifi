@@ -31,7 +31,7 @@
                         <div class="form-group col-md-12">
                             <label class="col-md-2 control-lable" for="name">Fullname</label>
                             <div class="col-md-7">
-                                <input type="text" ng-model="ctrl.personal.fullname" id="name" class="form-control input-sm" placeholder="Enter your Fullname" required/>
+                                <input type="text" ng-model="ctrl.personal.fullname" id="name" class="form-control input-sm" placeholder="Enter your Fullname" required ng-minlength="5" />
                             </div>
                         </div>
                     </div>
@@ -96,9 +96,9 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr dir-paginate="p in ctrl.getAllPersonals() | orderBy:sortKey:reverse | filter:search | itemsPerPage:2" current-page="currentPage">
+			<tr ng-repeat="p in ctrl.getAllPersonals() | orderBy:sortKey:reverse | filter:search">
 				<td>{{p.id}}</td>
-				<td>{{p.address}}</td>
+				<td>{{p.address}}</td>				
 				<td>{{p.dob | date: "dd/MM/yyyy"}}</td>
 				<td>{{p.fullname}}</td>
 				<td>{{p.gender}}</td>
@@ -107,14 +107,13 @@
 						class="btn btn-success custom-width">Edit</button></td>
 				<td><button type="button" ng-click="ctrl.confirm(p.id)"
 						class="btn btn-danger custom-width">Remove</button></td>
-
 			</tr>
 		</tbody>
 		
 	</table>
-	<dir-pagination-controls
-					max-size="2"
-					direction-links="true"
-					boundary-links="true">
-	</dir-pagination-controls>
+<!-- 	<dir-pagination-controls -->
+<!-- 					max-size="2" -->
+<!-- 					direction-links="true" -->
+<!-- 					boundary-links="true"> -->
+<!-- 	</dir-pagination-controls> -->
 </div>

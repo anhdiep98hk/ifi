@@ -2,7 +2,7 @@
  * 
  */
 'use strict';
-angular.module('myApp',['angularUtils.directives.dirPagination']).controller(
+angular.module('myApp').controller(
 				'PersonalController',
 				[
 						'PersonalService',
@@ -26,6 +26,10 @@ angular.module('myApp',['angularUtils.directives.dirPagination']).controller(
 							self.successMessage = '';
 							self.errorMessage = '';
 							self.done = false;
+							
+							self.onlyIntegers = /^\d+$/;
+					        self.onlyNumbers = /^\d+([,.]\d+)?$/;
+					        self.onlyText = /^[a-zA-Z]+$/;
 							
 							$scope.sort = function(keyname){
 								$scope.sortKey = keyname;   //set the sortKey to the param passed
